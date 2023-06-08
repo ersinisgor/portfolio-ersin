@@ -1,125 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ersin İşgör</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="header">
-      <div class="container">
-        <nav>
-          <div class="logo"><span>E</span>rsin</div>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="header-container">
-          <div class="header-text">
-            <p>Web Developer</p>
-            <h1>
-              Hi, I'm <span>Ersin</span> <br />Welcome to<br />my personal
-              website
-            </h1>
-          </div>
-          <div class="header-image">
-            <img
-              src="images/Grey Clean CV Resume Photo (2)-modified.png"
-              alt="Profil Photo"
-            />
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ersin İşgör</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <div class="logo">ersinisgor</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-container">
+        <div class="header-text">
+          <p>Web Developer</p>
+          <h1>
+            Hi, I'm <span>Ersin İşgör</span> <br />Welcome to<br />my personal
+            website
+          </h1>
+        </div>
+        <div class="header-image">
+          <img src="images/Grey Clean CV Resume Photo (2)-modified.png" alt="Profil Photo" />
         </div>
       </div>
     </div>
-    <!-------ABOUT--------->
-    <div id="about">
-      <div class="container">
-        <div class="row">
-          <div class="about-col-1">
-            <img src="images/IMG_1450.JPG" alt="" />
-          </div>
+  </div>
+  <!-------ABOUT--------->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="images/IMG_1450.JPG" alt="" />
+        </div>
 
-          <div class="about-col-2">
-            <h1 class="sub-title">About Me</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
-              corrupti illum eveniet accusamus veniam itaque necessitatibus
-              quaerat voluptatem saepe doloremque? Lorem ipsum dolor sit amet
-              consectetur, adipisicing elit. Maiores corrupti illum eveniet
-              accusamus veniam itaque necessitatibus quaerat voluptatem saepe
-              doloremque?
+        <div class="about-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
+            corrupti illum eveniet accusamus veniam itaque necessitatibus
+            quaerat voluptatem saepe doloremque? Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Maiores corrupti illum eveniet
+            accusamus veniam itaque necessitatibus quaerat voluptatem saepe
+            doloremque?
+          </p>
+
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">
+              Skills
             </p>
+            <p class="tab-links" onclick="opentab('experience')">
+              Experience
+            </p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+          </div>
 
-            <div class="tab-titles">
-              <p class="tab-links active-link" onclick="opentab('skills')">
-                Skills
-              </p>
-              <p class="tab-links" onclick="opentab('experience')">
-                Experience
-              </p>
-              <p class="tab-links" onclick="opentab('education')">Education</p>
-            </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>UI?UX</span><br />Designing Web/App Interfaces</li>
+              <li><span>Web Development</span><br />Web App Development</li>
+              <li>
+                <span>App Development</span><br />Building Android/ios app
+              </li>
+            </ul>
+          </div>
 
-            <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li><span>UI?UX</span><br />Designing Web/App Interfaces</li>
-                <li><span>Web Development</span><br />Web App Development</li>
-                <li>
-                  <span>App Development</span><br />Building Android/ios app
-                </li>
-              </ul>
-            </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>Web</span><br />Lorem, ipsum dolor.</li>
+              <li><span>Web Development</span><br />Web App Development</li>
+              <li>
+                <span>App Development</span><br />Building Android/ios app
+              </li>
+            </ul>
+          </div>
 
-            <div class="tab-contents" id="experience">
-              <ul>
-                <li><span>Web</span><br />Lorem, ipsum dolor.</li>
-                <li><span>Web Development</span><br />Web App Development</li>
-                <li>
-                  <span>App Development</span><br />Building Android/ios app
-                </li>
-              </ul>
-            </div>
-
-            <div class="tab-contents" id="education">
-              <ul>
-                <li><span>App</span><br />Lorem ipsum dolor sit amet.</li>
-                <li><span>Web Development</span><br />Web App Development</li>
-                <li>
-                  <span>App Development</span><br />Building Android/ios app
-                </li>
-              </ul>
-            </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>App</span><br />Lorem ipsum dolor sit amet.</li>
+              <li><span>Web Development</span><br />Web App Development</li>
+              <li>
+                <span>App Development</span><br />Building Android/ios app
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script>
-      let tablinks = document.getElementsByClassName("tab-links");
-      let tabcontents = document.getElementsByClassName("tab-contents");
+  <script>
+    let tablinks = document.getElementsByClassName("tab-links");
+    let tabcontents = document.getElementsByClassName("tab-contents");
 
-      function opentab(tabname) {
-        for (tablink of tablinks) {
-          tablink.classList.remove("active-link");
-        }
-        for (tabcontent of tabcontents) {
-          tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
+    function opentab(tabname) {
+      for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
       }
-    </script>
-  </body>
+      for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+</body>
+
 </html>
