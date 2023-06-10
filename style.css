@@ -23,7 +23,7 @@
   --font: #eae7dd;
   --button: #ff595a;
   --secondary: #efcb68;
-   --tr: #119da4;
+  --tr: #119da4;
   --four: #5c677d;
   --five: #bfa181;
 } */
@@ -38,10 +38,10 @@
   --four: #5c677d;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Creme';
   src: url(./font/Creme\ Espana.otf) format('opentype');
-}
+} */
 
 /* BASE STYLES */
 * {
@@ -54,6 +54,7 @@ body {
   background: var(--background);
   color: var(--font);
   font-family: 'Nunito', sans-serif;
+  /* font-family: 'Playfair Display', serif; */
 }
 
 h1 {
@@ -122,28 +123,47 @@ nav ul li a:hover::after {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  width: 1100px;
+  margin: auto;
 }
 
 .header-image {
-  height: 308px;
+  height: 500px;
+  position: relative;
 }
+
+/* Koyu tema kullanıldığında uygulanacak */
+/* .header-image-cover {
+  background: rgba(0, 18, 51, 0.25);
+  width: 340px;
+  height: 462px;
+  position: absolute;
+  border-radius: 20px;
+  bottom: 0;
+} */
 
 .header-image img {
   height: 100%;
+  border-radius: 20px;
 }
 
 .header-text {
   color: var(--four);
   margin-top: 10%;
   font-size: 1.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* position: relative;
+  left: 100px; */
 }
 
 .header-text h1 {
-  font-size: 3.75rem;
+  font-size: 4rem;
   margin-top: 1.25rem;
 }
 
-.header-text h1 span {
+.header-text span {
   /* color: var(--primary-color); */
   color: var(--font);
   /* font-family: 'Creme'; */
@@ -166,8 +186,25 @@ nav ul li a:hover::after {
   /* ***font-family: 'Petemoss', cursive; */
   font-size: 140px;
   /* font-style: italic; */
-  font-weight: 400;
+  font-weight: 500;
+  /* margin-left: 100px; */
 }
+
+.header-text span .uppercase {
+  margin-left: 0;
+  font-size: 180px;
+  margin-right: 4px;
+}
+
+span .uppercase.surname {
+  font-family: 'Allura', cursive;
+  font-size: 160px;
+  margin-right: 2px;
+}
+
+/* .header-text h1:last-child {
+  margin-left: 200px;
+} */
 
 /* ABOUT */
 #about {
