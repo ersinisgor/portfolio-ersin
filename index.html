@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ersin İşgör</title>
+  <link rel="stylesheet" href="styles/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -14,12 +15,39 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
     rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-  <div id="header">
+<body class="main-content">
+  <header class="section sec1 header active">
+    <i class="fa-brands fa-instagram"></i>
+  </header>
+  <main>
+    <section class="section sec2 about"></section>
+    <section class="section sec3 portfolio"></section>
+    <section class="section sec4 blogs"></section>
+    <section class="section sec5 contact"></section>
+  </main>
+  <div class="controls">
+    <div class="control control-1 active-btn">
+      <i class="fa-solid fa-house"></i>
+    </div>
+    <div class="control control-2">
+      <i class="fa-solid fa-user"></i>
+    </div>
+    <div class="control control-3">
+      <i class="fa-solid fa-briefcase"></i>
+    </div>
+    <div class="control control-4">
+      <i class="fa-solid fa-newspaper"></i>
+    </div>
+    <div class="control control-5">
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+  </div>
+  <!-- <div id="header">
     <div class="container">
       <nav>
         <div class="logo">ersinisgor</div>
@@ -41,12 +69,12 @@
         </div>
         <div class="header-image">
           <img src="images/black-profile-photo.png" class=" profil-photo" alt="Profil Photo" />
-          <!-- <div class="header-image-cover"></div> -->
-        </div>
-      </div>
-    </div>
+          <div class="header-image-cover"></div>
   </div>
-  <!-------ABOUT--------->
+  </div>
+  </div>
+  </div>
+
   <div id="about">
     <div class="container">
       <div class="row">
@@ -123,7 +151,8 @@
       event.currentTarget.classList.add("active-link");
       document.getElementById(tabname).classList.add("active-tab");
     }
-  </script>
+  </script> -->
+  <script src="app.js"></script>
 </body>
 
 </html>
