@@ -125,67 +125,78 @@ section {
   pointer-events: none;
 }
 
-.main-content .logo {
+/* Header-Content */
+.header-content {
+  display: grid;
+  grid-template-columns: 1fr 1.75fr;
+  grid-template-rows: 90px auto;
+  height: 100%;
+  -moz-column-gap: 5.2rem;
+       column-gap: 5.2rem;
+  width: 1200px;
+  margin: auto;
+}
+.header-content .logo {
   color: var(--button);
   font-size: 3.75rem;
   font-weight: 600;
   letter-spacing: 3px;
-  padding: 0 160px;
+  grid-area: 1/1/2/3;
 }
-.main-content .header-container {
+.header-content .left-header {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  width: 1200px;
-  margin: auto;
-  gap: 5.2rem;
+  align-items: center;
+  position: relative;
+  grid-area: 2/1/3/2;
 }
-.main-content .header-container .left-header .image {
-  height: 600px;
+.header-content .left-header .image {
+  height: 500px;
   position: relative;
 }
-.main-content .header-container .left-header .image img {
+.header-content .left-header .image img {
   height: 100%;
   border-radius: 20px;
 }
-.main-content .header-container .right-header {
+.header-content .right-header {
   color: var(--color-secondary-font);
   display: flex;
   flex-direction: column;
   align-items: center;
+  grid-area: 2/2/3/3;
+  justify-content: center;
 }
-.main-content .header-container .right-header .name {
+.header-content .right-header .name {
   font-size: 4rem;
 }
-.main-content .header-container .right-header span {
+.header-content .right-header span {
   color: var(--color-font);
   font-family: "Whisper", cursive;
   font-size: 140px;
   font-weight: 500;
 }
-.main-content .header-container .right-header span .uppercase {
+.header-content .right-header span .uppercase {
   margin-left: 0;
   font-size: 180px;
   margin-right: 4px;
 }
-.main-content .header-container .right-header span .uppercase.surname {
+.header-content .right-header span .uppercase.surname {
   font-family: "Allura", cursive;
   font-size: 160px;
   margin-right: 2px;
 }
-.main-content .header-container .right-header .name.subtext {
+.header-content .right-header .name.subtext {
   font-size: 2.6rem;
   text-align: center;
 }
-.main-content .header-container .right-header .main-btn {
+.header-content .right-header .main-btn {
   background-color: var(--color-button);
 }
-.main-content .header-container .right-header .main-btn .btn-text,
-.main-content .header-container .right-header .main-btn .btn-icon {
+.header-content .right-header .main-btn .btn-text,
+.header-content .right-header .main-btn .btn-icon {
   color: var(--color-background);
   font-size: 1.1rem;
 }
-.main-content .header-container .right-header .main-btn .btn-text {
+.header-content .right-header .main-btn .btn-text {
   font-family: "Playfair Display", serif;
   font-weight: 400;
 }/*# sourceMappingURL=style.css.map */
