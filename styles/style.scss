@@ -18,7 +18,8 @@
 
 body {
   background-color: var(--color-background);
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Playfair Display', serif;
+  // font-family: 'Nunito', sans-serif;
   font-size: 1.1rem;
   color: var(--font);
   transition: all 0.4s ease-in-out;
@@ -31,10 +32,14 @@ a {
   font-family: inherit;
 }
 
+// h1 {
+//   font-family: 'Playfair Display', serif;
+// }
+
 header {
   height: 100vh;
   color: var(--color-button);
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 section {
@@ -54,31 +59,30 @@ section {
 .sec1 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: aqua;
 }
 
 .sec2 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: blue;
+  // background-color: blue;
 }
 
 .sec3 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: burlywood;
+  // background-color: burlywood;
 }
 
 .sec4 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: chocolate;
+  // background-color: chocolate;
 }
 
 .sec5 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: darkgreen;
+  // background-color: darkgreen;
 }
 
 .active {
@@ -128,6 +132,78 @@ section {
       font-size: 1.2rem;
       color: var(--color-background);
       pointer-events: none;
+    }
+  }
+}
+
+.main-content {
+  .logo {
+    color: var(--button);
+    // font-family: 'Playfair Display', serif;
+    font-size: 3.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding: 0 160px;
+  }
+  .header-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 1200px;
+    margin: auto;
+    gap: 5.2rem;
+    .left-header {
+      .image {
+        height: 600px;
+        position: relative;
+        img {
+          height: 100%;
+          border-radius: 20px;
+        }
+      }
+    }
+    .right-header {
+      color: var(--color-secondary-font);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .name {
+        font-size: 4rem;
+      }
+      span {
+        color: var(--color-font);
+        font-family: 'Whisper', cursive;
+        font-size: 140px;
+        font-weight: 500;
+        .uppercase {
+          margin-left: 0;
+          font-size: 180px;
+          margin-right: 4px;
+        }
+        .uppercase.surname {
+          font-family: 'Allura', cursive;
+          font-size: 160px;
+          margin-right: 2px;
+        }
+      }
+      .name.subtext {
+        font-size: 2.6rem;
+        text-align: center;
+      }
+      .main-btn {
+        background-color: var(--color-button);
+        .btn-text,
+        .btn-icon {
+          color: var(--color-background);
+          font-size: 1.1rem;
+        }
+        .btn-text {
+          font-family: 'Playfair Display', serif;
+          font-weight: 400;
+        }
+        .btn-icon {
+        }
+      }
     }
   }
 }
