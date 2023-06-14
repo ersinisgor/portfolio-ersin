@@ -33,25 +33,14 @@ a {
 
 header {
   height: 100vh;
+  width: 100%;
   color: var(--color-button);
   padding: 0 8rem;
 }
 
-section {
-  width: 100%;
-  padding: 3rem 18rem;
-}
-
-.sec2 {
-  background-color: blue;
-}
-
-.sec3 {
-  background-color: burlywood;
-}
-
-.sec4 {
-  background-color: chocolate;
+ul {
+  width: 732px;
+  text-align: center;
 }
 
 .controls {
@@ -94,30 +83,61 @@ section {
 /* Header-Content */
 .header-content {
   height: 100%;
+  position: relative;
   margin: auto;
+}
+.header-content nav {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.header-content nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0.62rem 1.25rem;
+}
+.header-content nav ul li a {
+  color: var(--color-font);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: relative;
+}
+.header-content nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: var(--color-button);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.4s;
+  border-radius: 40px;
+}
+.header-content nav ul li a:hover::after {
+  width: 100%;
 }
 .header-content .header-container {
   display: flex;
-  padding-top: 4rem;
+  align-items: flex-end;
+  padding-top: 3.2rem;
   gap: 8rem;
 }
 .header-content .logo {
   color: var(--button);
-  font-size: 3.75rem;
+  font-size: 3.4rem;
   font-weight: 600;
   letter-spacing: 3px;
 }
 .header-content .left-header {
   display: flex;
-  align-items: center;
   position: relative;
   align-self: center;
-}
-.header-content .left-header .image {
-  height: 560px;
+  height: 550px;
   position: relative;
 }
-.header-content .left-header .image img {
+.header-content .left-header img {
   height: 100%;
   border-radius: 20px;
 }
@@ -160,20 +180,18 @@ section {
   align-self: center;
   align-items: center;
   overflow: hidden;
-  margin: 2rem 0;
+  margin: 2rem;
   position: relative;
 }
 .header-content .right-header .main-btn .btn-text,
 .header-content .right-header .main-btn .btn-icon {
   color: var(--color-font);
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .header-content .right-header .main-btn .btn-text {
   font-family: "Playfair Display", serif;
   font-weight: 600;
-  padding: 0 1.4rem 0 2rem;
-  color: var(--color-font);
-  font-size: 1.2rem;
+  padding: 0 1.2rem 0 2rem;
 }
 .header-content .right-header .main-btn .btn-icon {
   background-color: var(--color-button);
@@ -181,7 +199,7 @@ section {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  padding: 1rem;
+  padding: 0.7rem;
 }
 .header-content .right-header .main-btn::before {
   content: "";
