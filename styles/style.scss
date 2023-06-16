@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -21,7 +23,7 @@ body {
   font-family: 'Playfair Display', serif;
   // font-family: 'Nunito', sans-serif;
   font-size: 1.1rem;
-  color: var(--font);
+  color: var(--color-font);
   // transition: all 0.4s ease-in-out;
 }
 
@@ -49,7 +51,7 @@ header {
 /*--Navbar--*/
 nav {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   flex-wrap: wrap;
   .logo {
@@ -58,13 +60,14 @@ nav {
     font-weight: 600;
     letter-spacing: 3px;
   }
-  ul {
+  .menu {
     li {
       display: inline-block;
-      margin: 0.62rem 0;
+      // margin: 0.62rem 0;
       a {
-        color: var(--color-font);
-        font-size: 1.3rem;
+        // color: var(--color-font);
+        // font-size: 1.3rem;
+        font-size: min(max(1.3rem), 2vw);
         font-weight: 500;
         position: relative;
       }
@@ -91,12 +94,20 @@ nav {
       margin: 0 2.5rem;
     }
   }
+  .menu-btn {
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: none;
+    // color: var(--color-font);
+  }
 }
 
 /*--Header-Content--*/
 .header-content {
   display: flex;
   gap: 4rem;
+  padding-top: 2rem;
   // gap: 5%;
   .left-header {
     color: var(--color-secondary-font);
@@ -104,10 +115,9 @@ nav {
     flex-direction: column;
     align-self: flex-end;
     align-items: center;
-    // max-width: 695px;
-    // width: 60%;
+    // max-width: 698px;
     .name {
-      font-size: 3.6rem;
+      font-size: 3.4vw;
     }
     span {
       color: var(--color-font);
@@ -123,17 +133,16 @@ nav {
       }
       .uppercase.surname {
         font-family: 'Allura', cursive;
-        font-size: 11vw;
+        font-size: 10vw;
         margin-right: 2px;
       }
     }
     .name.subtext {
-      font-size: 2.8rem;
-      // text-align: center;
-      line-height: 4.4rem;
+      font-size: 3vw;
+      text-align: center;
     }
     .main-btn {
-      border-radius: 30px;
+      border-radius: 2rem;
       font-weight: 600;
       border: 1px solid var(--color-button);
       display: flex;
@@ -183,52 +192,56 @@ nav {
   }
   .right-header {
     display: flex;
-    // position: relative;
-    // align-self: center;
-    // width: 40%;
-    // flex-basis: 60%;
-    height: fit-content;
+    // height: fit-content;
+    // width: fit-content;
     img {
       // height: calc(100vh - 82.8px);
-      height: auto;
-      // max-width: 100%;
+      // height: auto;
       width: 100%;
-      // object-fit: scale-down;
       // height: 100%;
-      // min-width: auto;
     }
   }
 }
 
-/* Smartphones (portrait) */
-@media only screen and (max-width: 320px) {
-}
-
-/* iPads (portrait and landscape)  */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-}
-
-/* Desktops and laptops  */
-@media only screen and (min-width: 1224px) {
-}
-
-@media (max-width: 1200px) {
-  // .header-content {
-  //   flex-direction: column-reverse;
-  // }
-}
-
-@media (max-width: 992px) {
+/*--RESPONSIVE DESIGNS--*/
+/* Mobile and Tablets  */
+@media only screen and (max-device-width: 1024px) {
+  nav {
+    .menu {
+      display: none;
+    }
+    .menu-btn {
+      display: block;
+      font-size: 2rem;
+    }
+  }
   .header-content {
     flex-direction: column-reverse;
+    gap: 0;
     .left-header {
+      margin: 2rem 0;
+      .name {
+        font-size: 10vw;
+      }
       span {
-        font-size: 20vw;
+        font-size: 19vw;
         .uppercase {
-          font-size: 24vw;
+          font-size: 22vw;
         }
         .uppercase.surname {
-          font-size: 22vw;
+          font-size: 19vw;
+        }
+      }
+      .name.subtext {
+        font-size: 8vw;
+      }
+      .main-btn {
+        .btn-text,
+        .btn-icon {
+          font-size: 2rem;
+        }
+        .btn-icon {
+          padding: 1rem;
         }
       }
     }
