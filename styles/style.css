@@ -23,6 +23,8 @@ body {
   font-family: "Playfair Display", serif;
   font-size: 1.1rem;
   color: var(--color-font);
+  padding: 10px 8%;
+  padding-bottom: 0;
 }
 
 a {
@@ -30,13 +32,6 @@ a {
   text-decoration: none;
   color: inherit;
   font-family: inherit;
-}
-
-header {
-  height: 100vh;
-  width: 100%;
-  padding: 10px 10%;
-  padding-bottom: 0;
 }
 
 /*--Navbar--*/
@@ -56,7 +51,7 @@ nav .menu li {
   display: inline-block;
 }
 nav .menu li a {
-  font-size: min(1.3rem, 2vw);
+  font-size: 1.3rem;
   font-weight: 500;
   position: relative;
 }
@@ -82,13 +77,13 @@ nav .menu li:nth-child(2n) {
   margin: 0 2.5rem;
 }
 nav .menu-btn {
-  font-size: 1.3rem;
+  font-size: 2.3rem;
   font-weight: 500;
   cursor: pointer;
   display: none;
 }
 
-/*--Header-Content--*/
+/*--Header---*/
 .header-content {
   display: flex;
   gap: 4rem;
@@ -101,28 +96,30 @@ nav .menu-btn {
   align-self: flex-end;
   align-items: center;
 }
-.header-content .left-header .name {
-  font-size: 3.4vw;
+.header-content .left-header p {
+  width: 100%;
+  text-align: center;
 }
-.header-content .left-header span {
+.header-content .left-header .greeting {
+  font-size: 3.4rem;
+}
+.header-content .left-header .full-name {
   color: var(--color-font);
   font-family: "Whisper", cursive;
-  font-size: 10vw;
+  font-size: 9.6rem;
   font-weight: 500;
   white-space: nowrap;
 }
-.header-content .left-header span .uppercase {
-  margin-left: 0;
-  font-size: 12vw;
+.header-content .left-header .full-name .name .capitalizeName {
+  font-size: 11.8rem;
   margin-right: 4px;
 }
-.header-content .left-header span .uppercase.surname {
+.header-content .left-header .full-name .surname .capitalizeSurname {
   font-family: "Allura", cursive;
-  font-size: 10vw;
   margin-right: 2px;
 }
-.header-content .left-header .name.subtext {
-  font-size: 3vw;
+.header-content .left-header .main-text {
+  font-size: 2.9rem;
   text-align: center;
 }
 .header-content .left-header .main-btn {
@@ -133,7 +130,7 @@ nav .menu-btn {
   align-self: center;
   align-items: center;
   overflow: hidden;
-  margin: 2rem;
+  margin: 2rem 0;
   position: relative;
 }
 .header-content .left-header .main-btn .btn-text,
@@ -167,7 +164,7 @@ nav .menu-btn {
 .header-content .left-header .main-btn:hover::before {
   width: 100%;
   height: 100%;
-  background-color: #ff006e;
+  background-color: var(--color-button);
   transform: translateX(0);
 }
 .header-content .right-header {
@@ -177,44 +174,83 @@ nav .menu-btn {
   width: 100%;
 }
 
+/* ABOUT */
 /*--RESPONSIVE DESIGNS--*/
-/* Mobile and Tablets  */
-@media only screen and (max-device-width: 1024px) {
+@media (max-width: 480px) {
+  nav .logo {
+    font-size: 2rem;
+  }
+  nav .menu-btn {
+    font-size: 1.6rem;
+  }
+  .header-content {
+    gap: 2rem;
+  }
+  .header-content .left-header .greeting {
+    font-size: 2rem;
+  }
+  .header-content .left-header .full-name {
+    font-size: 3rem;
+    white-space: pre-line;
+  }
+  .header-content .left-header .full-name .name .capitalizeName {
+    font-size: 3.4rem;
+  }
+  .header-content .left-header .main-text {
+    font-size: 1.8rem;
+  }
+  .header-content .left-header .main-btn .btn-text,
+  .header-content .left-header .main-btn .btn-icon {
+    font-size: 0.6rem;
+  }
+  .header-content .left-header .main-btn .btn-text {
+    padding: 0 0.4rem 0 1.2rem;
+  }
+  .header-content .left-header .main-btn .btn-icon {
+    padding: 0.4rem;
+  }
+}
+@media (max-width: 768px) {
   nav .menu {
     display: none;
   }
   nav .menu-btn {
     display: block;
-    font-size: 2rem;
   }
   .header-content {
-    flex-direction: column-reverse;
-    gap: 0;
+    flex-wrap: wrap-reverse;
   }
-  .header-content .left-header {
-    margin: 2rem 0;
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .header-content .left-header .greeting {
+    font-size: 2.8rem;
   }
-  .header-content .left-header .name {
-    font-size: 10vw;
+  .header-content .left-header .full-name {
+    font-size: 6rem;
   }
-  .header-content .left-header span {
-    font-size: 19vw;
+  .header-content .left-header .full-name .name .capitalizeName {
+    font-size: 8rem;
   }
-  .header-content .left-header span .uppercase {
-    font-size: 22vw;
+  .header-content .left-header .main-text {
+    font-size: 2.4rem;
   }
-  .header-content .left-header span .uppercase.surname {
-    font-size: 19vw;
-  }
-  .header-content .left-header .name.subtext {
-    font-size: 8vw;
+  .header-content .left-header .main-btn {
+    margin: 2.6rem 0;
   }
   .header-content .left-header .main-btn .btn-text,
   .header-content .left-header .main-btn .btn-icon {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .header-content .left-header .main-btn .btn-icon {
     padding: 1rem;
+  }
+}
+@media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
+  .header-content .left-header .full-name {
+    font-size: 7rem;
+  }
+  .header-content .left-header .full-name .name .capitalizeName {
+    font-size: 8rem;
   }
 }
 /* Header-Content *//*# sourceMappingURL=style.css.map */

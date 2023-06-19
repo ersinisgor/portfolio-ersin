@@ -24,6 +24,8 @@ body {
   // font-family: 'Nunito', sans-serif;
   font-size: 1.1rem;
   color: var(--color-font);
+  padding: 10px 8%;
+  padding-bottom: 0;
   // transition: all 0.4s ease-in-out;
 }
 
@@ -32,20 +34,6 @@ a {
   text-decoration: none;
   color: inherit;
   font-family: inherit;
-}
-
-header {
-  height: 100vh;
-  width: 100%;
-  // color: var(--color-button);
-  padding: 10px 10%;
-  padding-bottom: 0;
-  // background: url(/images/My\ project-9.jpg);
-  // background-position-y: 15%;
-  // background-position-x: -100px;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // overflow: hidden;
 }
 
 /*--Navbar--*/
@@ -65,9 +53,9 @@ nav {
       display: inline-block;
       // margin: 0.62rem 0;
       a {
-        // color: var(--color-font);
-        // font-size: 1.3rem;
-        font-size: min(max(1.3rem), 2vw);
+        font-size: 1.3rem;
+        // font-size: min(max(1.3rem), 2vw);
+        // font-size: min(max(1.3rem, 1.4vw), 2vw);
         font-weight: 500;
         position: relative;
       }
@@ -95,50 +83,54 @@ nav {
     }
   }
   .menu-btn {
-    font-size: 1.3rem;
+    font-size: 2.3rem;
     font-weight: 500;
     cursor: pointer;
     display: none;
-    // color: var(--color-font);
   }
 }
 
-/*--Header-Content--*/
+/*--Header---*/
 .header-content {
   display: flex;
   gap: 4rem;
   padding-top: 2rem;
-  // gap: 5%;
   .left-header {
     color: var(--color-secondary-font);
     display: flex;
     flex-direction: column;
     align-self: flex-end;
     align-items: center;
-    // max-width: 698px;
-    .name {
-      font-size: 3.4vw;
+    p {
+      width: 100%;
+      text-align: center;
     }
-    span {
+    .greeting {
+      font-size: 3.4rem;
+    }
+    .full-name {
       color: var(--color-font);
       font-family: 'Whisper', cursive;
-      font-size: 10vw;
+      font-size: 9.6rem;
       font-weight: 500;
       white-space: nowrap;
       // margin: -20px 0;
-      .uppercase {
-        margin-left: 0;
-        font-size: 12vw;
-        margin-right: 4px;
+      .name {
+        .capitalizeName {
+          font-size: 11.8rem;
+          margin-right: 4px;
+        }
       }
-      .uppercase.surname {
-        font-family: 'Allura', cursive;
-        font-size: 10vw;
-        margin-right: 2px;
+
+      .surname {
+        .capitalizeSurname {
+          font-family: 'Allura', cursive;
+          margin-right: 2px;
+        }
       }
     }
-    .name.subtext {
-      font-size: 3vw;
+    .main-text {
+      font-size: 2.9rem;
       text-align: center;
     }
     .main-btn {
@@ -149,7 +141,7 @@ nav {
       align-self: center;
       align-items: center;
       overflow: hidden;
-      margin: 2rem;
+      margin: 2rem 0;
       position: relative;
       .btn-text,
       .btn-icon {
@@ -184,7 +176,7 @@ nav {
         &::before {
           width: 100%;
           height: 100%;
-          background-color: #ff006e;
+          background-color: var(--color-button);
           transform: translateX(0);
         }
       }
@@ -192,53 +184,170 @@ nav {
   }
   .right-header {
     display: flex;
-    // height: fit-content;
-    // width: fit-content;
     img {
-      // height: calc(100vh - 82.8px);
-      // height: auto;
       width: 100%;
-      // height: 100%;
     }
   }
 }
 
+/* ABOUT */
+// #about {
+//   padding: 80px 0;
+//   color: var(--font);
+// }
+
+// .row {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+// }
+
+// .about-col-1 {
+//   flex-basis: 35%;
+// }
+
+// .about-col-1 img {
+//   width: 100%;
+//   border-radius: 20px;
+// }
+
+// .about-col-2 {
+//   flex-basis: 60%;
+// }
+
+// .sub-title {
+//   font-size: 60px;
+//   font-weight: 600;
+// }
+
+// .tab-titles {
+//   display: flex;
+//   margin: 20px 0 40px;
+// }
+
+// .tab-links {
+//   margin-right: 50px;
+//   font-size: 18px;
+//   font-weight: 500;
+//   cursor: pointer;
+//   position: relative;
+// }
+
+// .tab-links::after {
+//   content: '';
+//   width: 0;
+//   height: 3px;
+//   background: var(--font-color);
+//   position: absolute;
+//   left: 0;
+//   bottom: -8px;
+//   transition: 0.5s;
+// }
+
+// .tab-links.active-link::after {
+//   width: 100%;
+// }
+
+// .tab-contents ul li {
+//   list-style: none;
+//   margin: 10px 0;
+// }
+
+// .tab-contents ul li span {
+//   color: var(--font-color);
+//   font-size: 14px;
+// }
+
+// .tab-contents {
+//   display: none;
+// }
+
+// .tab-contents.active-tab {
+//   display: block;
+// }
+
 /*--RESPONSIVE DESIGNS--*/
-/* Mobile and Tablets  */
-@media only screen and (max-device-width: 1024px) {
+// Mobile
+@media (max-width: 480px) {
+  nav {
+    .logo {
+      font-size: 2rem;
+    }
+    .menu-btn {
+      font-size: 1.6rem;
+    }
+  }
+  .header-content {
+    gap: 2rem;
+    .left-header {
+      .greeting {
+        font-size: 2rem;
+      }
+      .full-name {
+        font-size: 3rem;
+        white-space: pre-line;
+        .name {
+          .capitalizeName {
+            font-size: 3.4rem;
+          }
+        }
+      }
+      .main-text {
+        font-size: 1.8rem;
+      }
+      .main-btn {
+        .btn-text,
+        .btn-icon {
+          font-size: 0.6rem;
+        }
+        .btn-text {
+          padding: 0 0.4rem 0 1.2rem;
+        }
+        .btn-icon {
+          padding: 0.4rem;
+        }
+      }
+    }
+  }
+}
+
+// Mobile and Small Tablets
+@media (max-width: 768px) {
   nav {
     .menu {
       display: none;
     }
     .menu-btn {
       display: block;
-      font-size: 2rem;
     }
   }
   .header-content {
-    flex-direction: column-reverse;
-    gap: 0;
+    flex-wrap: wrap-reverse;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .header-content {
     .left-header {
-      margin: 2rem 0;
-      .name {
-        font-size: 10vw;
+      .greeting {
+        font-size: 2.8rem;
       }
-      span {
-        font-size: 19vw;
-        .uppercase {
-          font-size: 22vw;
-        }
-        .uppercase.surname {
-          font-size: 19vw;
+      .full-name {
+        font-size: 6rem;
+        .name {
+          .capitalizeName {
+            font-size: 8rem;
+          }
         }
       }
-      .name.subtext {
-        font-size: 8vw;
+      .main-text {
+        font-size: 2.4rem;
       }
       .main-btn {
+        margin: 2.6rem 0;
         .btn-text,
         .btn-icon {
-          font-size: 2rem;
+          font-size: 1.6rem;
         }
         .btn-icon {
           padding: 1rem;
@@ -247,6 +356,56 @@ nav {
     }
   }
 }
+
+// Tablets and Laptops
+@media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
+  .header-content {
+    .left-header {
+      .full-name {
+        font-size: 7rem;
+        .name {
+          .capitalizeName {
+            font-size: 8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media only screen and (max-device-width: 769px) and (max-device-width: 1024px) {
+//   .header-content {
+//     flex-direction: column-reverse;
+//     gap: 0;
+//     .left-header {
+//       margin: 2rem 0;
+//       .name {
+//         font-size: 10vw;
+//       }
+//       span {
+//         font-size: 19vw;
+//         .uppercase {
+//           font-size: 22vw;
+//         }
+//         .uppercase.surname {
+//           font-size: 19vw;
+//         }
+//       }
+//       .name.subtext {
+//         font-size: 8vw;
+//       }
+//       .main-btn {
+//         .btn-text,
+//         .btn-icon {
+//           font-size: 2rem;
+//         }
+//         .btn-icon {
+//           padding: 1rem;
+//         }
+//       }
+//     }
+//   }
+// }
 
 // .header-container {
 //   display: flex;
