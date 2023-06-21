@@ -2,11 +2,12 @@
 :root {
   --color-background: #eae7dd;
   --color-font: #001233;
-  --color-button: #ff006e;
+  --color-button: #ff595a;
   --color-secondary: #efcb68;
-  --color-secondary-font: rgb(92, 103, 125);
+  --color-secondary-font: #5c677d;
   --br-sm-2: 14px;
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.2);
+  --box-shadow-2: rgba(92, 103, 125, 0.6);
 }
 
 *,
@@ -19,8 +20,8 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  border-radius: 6px;
-  background-color: var(--color-secondary-font);
+  border-radius: 5px;
+  background-color: var(--color-font);
 }
 
 *::-webkit-scrollbar {
@@ -31,10 +32,14 @@
 body {
   background-color: var(--color-background);
   font-family: "Playfair Display", serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--color-font);
-  padding: 10px 8%;
-  padding-bottom: 0;
+  padding-top: 10px;
+  transition: all 0.4s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -42,37 +47,45 @@ a {
   text-decoration: none;
   color: inherit;
   font-family: inherit;
+  font-family: "Nunito", sans-serif;
 }
 
 /*--Navbar--*/
-nav {
+nav .nav-container {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--color-background);
+  padding: 0 5%;
+  padding-bottom: 1.2rem;
+  z-index: 2;
 }
-nav .logo {
+nav .nav-container .logo {
   color: var(--color-button);
   font-size: 3.4rem;
   font-weight: 600;
   letter-spacing: 3px;
 }
-nav .menu {
+nav .nav-container .menu {
   margin-top: 1rem;
 }
-nav .menu li {
+nav .nav-container .menu li {
   display: inline-block;
 }
-nav .menu li a {
+nav .nav-container .menu li a {
   font-size: 1.3rem;
   font-weight: 500;
   position: relative;
 }
-nav .menu li a:hover {
+nav .nav-container .menu li a:hover {
   text-shadow: 1px 1px 12px var(--color-font);
   transform: translateY(-2px);
 }
-nav .menu li a::after {
+nav .nav-container .menu li a::after {
   content: "";
   width: 0;
   height: 3px;
@@ -83,13 +96,13 @@ nav .menu li a::after {
   transition: 0.4s;
   border-radius: 40px;
 }
-nav .menu li a:hover::after {
+nav .nav-container .menu li a:hover::after {
   width: 100%;
 }
-nav .menu li:nth-child(2n) {
+nav .nav-container .menu li:nth-child(2n) {
   margin: 0 2.5rem;
 }
-nav .controls {
+nav .nav-container .controls {
   position: fixed;
   bottom: 3%;
   left: 50%;
@@ -101,14 +114,14 @@ nav .controls {
   border-radius: 3.9rem;
   display: none;
 }
-nav .controls .active-btn {
+nav .nav-container .controls .active-btn {
   background-color: var(--color-button) !important;
   transition: all 0.4s ease-in-out;
 }
-nav .controls .active-btn i {
+nav .nav-container .controls .active-btn i {
   color: var(--color-font) !important;
 }
-nav .controls .control {
+nav .nav-container .controls .control {
   padding: 1rem;
   cursor: pointer;
   background-color: var(--color-secondary-font);
@@ -121,7 +134,7 @@ nav .controls .control {
   margin: 0 0.5rem;
   box-shadow: var(--box-shadow-1);
 }
-nav .controls .control i {
+nav .nav-container .controls .control i {
   font-size: 1.2rem;
   color: var(--color-background);
   pointer-events: none;
@@ -131,10 +144,31 @@ nav .controls .control i {
 .header-content {
   display: flex;
   gap: 3.6rem;
-  padding: 2rem 0;
-  justify-content: center;
+  padding: 6rem 5%;
+  justify-content: space-between;
 }
 .header-content .left-header {
+  display: flex;
+}
+.header-content .left-header .social-icons {
+  background: var(--box-shadow-2);
+  display: flex;
+  flex-direction: column;
+  height: -moz-max-content;
+  height: max-content;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-right: 2rem;
+  align-self: center;
+}
+.header-content .left-header .social-icons i {
+  font-size: 2rem;
+  padding: 0.5rem;
+  color: var(--color-background);
+}
+.header-content .left-header .text-container {
   color: var(--color-secondary-font);
   display: flex;
   flex-direction: column;
@@ -142,33 +176,33 @@ nav .controls .control i {
   align-items: center;
   max-width: 49rem;
 }
-.header-content .left-header p {
+.header-content .left-header .text-container p {
   width: 100%;
   text-align: center;
 }
-.header-content .left-header .greeting {
+.header-content .left-header .text-container .greeting {
   font-size: 3.6rem;
 }
-.header-content .left-header .full-name {
+.header-content .left-header .text-container .full-name {
   color: var(--color-font);
   font-family: "Whisper", cursive;
   font-size: 8.4rem;
   font-weight: 500;
   white-space: nowrap;
 }
-.header-content .left-header .full-name .name .capitalizeName {
+.header-content .left-header .text-container .full-name .name .capitalizeName {
   font-size: 10.8rem;
   margin-right: 4px;
 }
-.header-content .left-header .full-name .surname .capitalizeSurname {
+.header-content .left-header .text-container .full-name .surname .capitalizeSurname {
   font-family: "Allura", cursive;
   margin-right: 2px;
 }
-.header-content .left-header .main-text {
+.header-content .left-header .text-container .main-text {
   font-size: 3.2rem;
   text-align: center;
 }
-.header-content .left-header .main-btn {
+.header-content .left-header .text-container .main-btn {
   border-radius: 2rem;
   font-weight: 600;
   border: 1px solid var(--color-button);
@@ -179,17 +213,17 @@ nav .controls .control i {
   margin-top: 2rem;
   position: relative;
 }
-.header-content .left-header .main-btn .btn-text,
-.header-content .left-header .main-btn .btn-icon {
+.header-content .left-header .text-container .main-btn .btn-text,
+.header-content .left-header .text-container .main-btn .btn-icon {
   color: var(--color-font);
   font-size: 1rem;
 }
-.header-content .left-header .main-btn .btn-text {
+.header-content .left-header .text-container .main-btn .btn-text {
   font-family: "Playfair Display", serif;
   font-weight: 600;
   padding: 0 1.2rem 0 2rem;
 }
-.header-content .left-header .main-btn .btn-icon {
+.header-content .left-header .text-container .main-btn .btn-icon {
   background-color: var(--color-button);
   display: flex;
   align-items: center;
@@ -197,7 +231,7 @@ nav .controls .control i {
   border-radius: 50%;
   padding: 0.7rem;
 }
-.header-content .left-header .main-btn::before {
+.header-content .left-header .text-container .main-btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -207,7 +241,7 @@ nav .controls .control i {
   z-index: -1;
   border-radius: 30px;
 }
-.header-content .left-header .main-btn:hover::before {
+.header-content .left-header .text-container .main-btn:hover::before {
   width: 100%;
   height: 100%;
   background-color: var(--color-button);
@@ -219,37 +253,41 @@ nav .controls .control i {
 .header-content .right-header img {
   width: 100%;
   min-width: 26rem;
-  max-width: 31rem;
+  max-width: 26rem;
+  filter: drop-shadow(-16px 16px 6px var(--box-shadow-2));
 }
 
 /* ABOUT */
 #about {
-  padding: 80px 0;
-  color: var(--font);
+  padding: 8rem 5%;
 }
-
-.row {
+#about .row {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
-.about-col-1 {
+#about .row .about-col-1 {
   flex-basis: 35%;
 }
-
-.about-col-1 img {
+#about .row .about-col-1 img {
   width: 100%;
   border-radius: 20px;
 }
-
-.about-col-2 {
+#about .row .about-col-2 {
   flex-basis: 60%;
 }
-
-.sub-title {
+#about .row .about-col-2 .about-title {
+  color: var(--color-font);
   font-size: 60px;
   font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#about .row .about-col-2 .about-content {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.6rem;
+  text-align: justify;
+  color: var(--color-secondary-font);
 }
 
 .tab-titles {
@@ -269,7 +307,7 @@ nav .controls .control i {
   content: "";
   width: 0;
   height: 3px;
-  background: var(--font-color);
+  background: var(--color-button);
   position: absolute;
   left: 0;
   bottom: -8px;
@@ -286,7 +324,7 @@ nav .controls .control i {
 }
 
 .tab-contents ul li span {
-  color: var(--font-color);
+  color: var(--color-button);
   font-size: 14px;
 }
 
@@ -300,7 +338,7 @@ nav .controls .control i {
 
 /*---------------RESPONSIVE DESIGNS-----------------*/
 @media (max-width: 480px) {
-  nav .logo {
+  nav .nav-container .logo {
     font-size: 2rem;
   }
   .header-content {
@@ -331,10 +369,13 @@ nav .controls .control i {
   }
 }
 @media (max-width: 768px) {
-  nav .menu {
+  nav .nav-container {
+    position: static;
+  }
+  nav .nav-container .menu {
     display: none;
   }
-  nav .controls {
+  nav .nav-container .controls {
     display: flex;
   }
   .header-content {
@@ -370,10 +411,10 @@ nav .controls .control i {
   }
 }
 @media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
-  nav .logo {
+  nav .nav-container .logo {
     font-size: 2.9rem;
   }
-  nav .menu li a {
+  nav .nav-container .menu li a {
     font-size: 1rem;
   }
   .header-content {
@@ -417,13 +458,14 @@ nav .controls .control i {
   }
 }
 @media (min-width: 1700px) {
-  nav .logo {
+  nav .nav-container .logo {
     font-size: 5rem;
   }
-  nav .menu li a {
+  nav .nav-container .menu li a {
     font-size: 2rem;
   }
   .header-content {
+    justify-content: center;
     gap: 5.4rem;
   }
   .header-content .left-header {
