@@ -31,7 +31,7 @@
 
 body {
   background-color: var(--color-background);
-  font-family: "Playfair Display", serif;
+  font-family: "Nunito", sans-serif;
   font-size: 1.2rem;
   color: var(--color-font);
   padding-top: 10px;
@@ -42,12 +42,22 @@ html {
   scroll-behavior: smooth;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.greeting,
+.main-text {
+  font-family: "Playfair Display", serif;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
   font-family: inherit;
-  font-family: "Nunito", sans-serif;
 }
 
 /*--Navbar--*/
@@ -70,22 +80,24 @@ nav .nav-container .logo {
   font-weight: 600;
   letter-spacing: 3px;
 }
-nav .nav-container .menu {
+nav .nav-container .menu-container {
   margin-top: 1rem;
+  display: flex;
+  align-items: center;
 }
-nav .nav-container .menu li {
+nav .nav-container .menu-container .menu li {
   display: inline-block;
 }
-nav .nav-container .menu li a {
+nav .nav-container .menu-container .menu li a {
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
 }
-nav .nav-container .menu li a:hover {
+nav .nav-container .menu-container .menu li a:hover {
   text-shadow: 1px 1px 12px var(--color-font);
   transform: translateY(-2px);
 }
-nav .nav-container .menu li a::after {
+nav .nav-container .menu-container .menu li a::after {
   content: "";
   width: 0;
   height: 3px;
@@ -96,11 +108,27 @@ nav .nav-container .menu li a::after {
   transition: 0.4s;
   border-radius: 40px;
 }
-nav .nav-container .menu li a:hover::after {
+nav .nav-container .menu-container .menu li a:hover::after {
   width: 100%;
 }
-nav .nav-container .menu li:nth-child(2n) {
+nav .nav-container .menu-container .menu li:nth-child(2n) {
   margin: 0 2.5rem;
+}
+nav .nav-container .menu-container .theme {
+  margin-left: 5rem;
+  border-radius: 50%;
+  background-color: var(--color-font);
+  color: var(--color-background);
+  box-shadow: var(--box-shadow-1);
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+nav .nav-container .menu-container .theme i {
+  font-size: 0.9rem;
 }
 nav .nav-container .controls {
   position: fixed;
@@ -164,9 +192,13 @@ nav .nav-container .controls .control i {
   align-self: center;
 }
 .header-content .left-header .social-icons i {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0.5rem;
   color: var(--color-background);
+  margin: 0.2rem 0;
+}
+.header-content .left-header .social-icons i:hover {
+  transform: scale(1.15);
 }
 .header-content .left-header .text-container {
   color: var(--color-secondary-font);
@@ -344,27 +376,27 @@ nav .nav-container .controls .control i {
   .header-content {
     gap: 2rem;
   }
-  .header-content .left-header .greeting {
+  .header-content .left-header .text-container .greeting {
     font-size: 2rem;
   }
-  .header-content .left-header .full-name {
+  .header-content .left-header .text-container .full-name {
     font-size: 3rem;
     white-space: pre-line;
   }
-  .header-content .left-header .full-name .name .capitalizeName {
+  .header-content .left-header .text-container .full-name .name .capitalizeName {
     font-size: 3.4rem;
   }
-  .header-content .left-header .main-text {
+  .header-content .left-header .text-container .main-text {
     font-size: 1.8rem;
   }
-  .header-content .left-header .main-btn .btn-text,
-  .header-content .left-header .main-btn .btn-icon {
+  .header-content .left-header .text-container .main-btn .btn-text,
+  .header-content .left-header .text-container .main-btn .btn-icon {
     font-size: 0.6rem;
   }
-  .header-content .left-header .main-btn .btn-text {
+  .header-content .left-header .text-container .main-btn .btn-text {
     padding: 0 0.4rem 0 1.2rem;
   }
-  .header-content .left-header .main-btn .btn-icon {
+  .header-content .left-header .text-container .main-btn .btn-icon {
     padding: 0.4rem;
   }
 }
@@ -372,7 +404,7 @@ nav .nav-container .controls .control i {
   nav .nav-container {
     position: static;
   }
-  nav .nav-container .menu {
+  nav .nav-container .menu-container .menu {
     display: none;
   }
   nav .nav-container .controls {
@@ -380,8 +412,23 @@ nav .nav-container .controls .control i {
   }
   .header-content {
     flex-wrap: wrap-reverse;
+    padding: 2rem 5%;
   }
   .header-content .left-header {
+    flex-direction: column;
+  }
+  .header-content .left-header .social-icons {
+    flex-direction: row;
+    border-bottom-right-radius: unset;
+    border-bottom-left-radius: unset;
+    padding: 1rem 0;
+    margin: 3rem 0;
+    border-radius: 20px;
+  }
+  .header-content .left-header .social-icons i {
+    margin: 0 1.2rem;
+  }
+  .header-content .left-header .text-container {
     max-width: unset;
   }
   .header-content .right-header img {
@@ -390,50 +437,61 @@ nav .nav-container .controls .control i {
   }
 }
 @media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
-  .header-content .left-header .greeting {
+  .header-content .left-header .text-container .greeting {
     font-size: 2.8rem;
   }
-  .header-content .left-header .full-name {
+  .header-content .left-header .text-container .full-name {
     font-size: 6rem;
   }
-  .header-content .left-header .full-name .name .capitalizeName {
+  .header-content .left-header .text-container .full-name .name .capitalizeName {
     font-size: 8rem;
   }
-  .header-content .left-header .main-text {
+  .header-content .left-header .text-container .main-text {
     font-size: 2.4rem;
   }
-  .header-content .left-header .main-btn .btn-text,
-  .header-content .left-header .main-btn .btn-icon {
+  .header-content .left-header .text-container .main-btn .btn-text,
+  .header-content .left-header .text-container .main-btn .btn-icon {
     font-size: 1.6rem;
   }
-  .header-content .left-header .main-btn .btn-icon {
+  .header-content .left-header .text-container .main-btn .btn-icon {
     padding: 1rem;
   }
 }
 @media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
   nav .nav-container .logo {
-    font-size: 2.9rem;
+    font-size: 2.2rem;
   }
-  nav .nav-container .menu li a {
+  nav .nav-container .menu-container .menu li a {
     font-size: 1rem;
+  }
+  nav .nav-container .menu-container .menu li:nth-child(2n) {
+    margin: 0 1.2rem;
+  }
+  nav .nav-container .menu-container .theme {
+    margin-left: 2.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  nav .nav-container .menu-container .theme i {
+    font-size: 0.6rem;
   }
   .header-content {
     gap: 2rem;
   }
-  .header-content .left-header {
+  .header-content .left-header .text-container {
     max-width: unset;
   }
-  .header-content .left-header .greeting {
+  .header-content .left-header .text-container .greeting {
     font-size: 2.7rem;
   }
-  .header-content .left-header .full-name {
-    font-size: 5.2rem;
+  .header-content .left-header .text-container .full-name {
+    font-size: 4.6rem;
   }
-  .header-content .left-header .full-name .name .capitalizeName {
-    font-size: 6.8rem;
+  .header-content .left-header .text-container .full-name .name .capitalizeName {
+    font-size: 6rem;
   }
-  .header-content .left-header .main-text {
-    font-size: 2rem;
+  .header-content .left-header .text-container .main-text {
+    font-size: 1.8rem;
   }
   .header-content .right-header img {
     min-width: 18.2rem;
@@ -441,19 +499,36 @@ nav .nav-container .controls .control i {
   }
 }
 @media only screen and (min-device-width: 1025px) and (max-device-width: 1200px) {
+  nav .nav-container .logo {
+    font-size: 3rem;
+  }
+  nav .nav-container .menu-container .menu li a {
+    font-size: 1.2rem;
+  }
+  nav .nav-container .menu-container .menu li:nth-child(2n) {
+    margin: 0 2rem;
+  }
+  nav .nav-container .menu-container .theme {
+    margin-left: 4rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  nav .nav-container .menu-container .theme i {
+    font-size: 0.8rem;
+  }
   .header-content {
     gap: 2rem;
   }
-  .header-content .left-header .greeting {
+  .header-content .left-header .text-container .greeting {
     font-size: 3rem;
   }
-  .header-content .left-header .full-name {
+  .header-content .left-header .text-container .full-name {
     font-size: 6rem;
   }
-  .header-content .left-header .full-name .name .capitalizeName {
+  .header-content .left-header .text-container .full-name .name .capitalizeName {
     font-size: 8rem;
   }
-  .header-content .left-header .main-text {
+  .header-content .left-header .text-container .main-text {
     font-size: 2.4rem;
   }
 }
@@ -461,7 +536,7 @@ nav .nav-container .controls .control i {
   nav .nav-container .logo {
     font-size: 5rem;
   }
-  nav .nav-container .menu li a {
+  nav .nav-container .menu-container .menu li a {
     font-size: 2rem;
   }
   .header-content {
