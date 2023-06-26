@@ -2,6 +2,7 @@
 :root {
   --color-background: #eae7dd;
   --color-font: #001233;
+
   // --color-button: #ff006e;
   --color-button: #ff595a;
   --color-secondary: #efcb68;
@@ -20,13 +21,28 @@
   list-style: none;
 }
 
+.dark {
+  --color-background: #001233;
+  --color-font: #eae7dd;
+  --color-button: #ff006e;
+  // --color-button: #ff595a;
+  --color-secondary: #efcb68;
+  --color-secondary-font: #5c677d;
+  // --br-sm-2: 14px;
+  // --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.2);
+  // --box-shadow-2: rgba(92, 103, 125, 0.6);
+}
+
 *::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: var(--color-font);
 }
 
+*::-webkit-scrollbar-corner {
+  background-color: var(--color-background);
+}
+
 *::-webkit-scrollbar {
-  // background-color: var(--color-background);
   width: 1rem;
   height: 1rem;
 }
@@ -43,6 +59,10 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+section {
+  padding: 8rem 5%;
 }
 
 h1,
@@ -143,7 +163,11 @@ nav {
         // vertical-align: middle;
         // line-height: 1.8rem;
         // text-align: center;
+        transition: all 1s;
         cursor: pointer;
+        &:active {
+          transform: translateY(-6px);
+        }
         i {
           font-size: 0.9rem;
         }
@@ -195,7 +219,7 @@ nav {
   }
 }
 
-/*--Header---*/
+/*---------Header-----------*/
 .header-content {
   display: flex;
   gap: 3.6rem;
@@ -302,7 +326,7 @@ nav {
           top: 0;
           right: 0;
           transform: translateX(100%);
-          transition: all 0.4s ease-in-out;
+          transition: all 0.5s ease-in-out;
           z-index: -1;
           border-radius: 30px;
         }
@@ -330,9 +354,16 @@ nav {
   }
 }
 
-/* ABOUT */
+/* ----------ABOUT--------- */
+.title {
+  color: var(--color-font);
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 #about {
-  padding: 8rem 5%;
   // color: var(--color-background);
   // color: var(--font);
   // background-color: var(--color-button);
@@ -349,13 +380,6 @@ nav {
     }
     .about-col-2 {
       flex-basis: 60%;
-      .about-title {
-        color: var(--color-font);
-        font-size: 60px;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
 
       .about-content {
         font-family: 'Nunito', sans-serif;
@@ -411,6 +435,85 @@ nav {
 
 .tab-contents.active-tab {
   display: block;
+}
+
+/* ----------Portfolio-------------*/
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 2.5rem;
+  margin-top: 50px;
+  .project {
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    img {
+      width: 100%;
+      border-radius: 1rem;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .layer {
+      width: 100%;
+      height: 0;
+      color: var(--color-background);
+      border-radius: 1rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 40px;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), var(--color-button));
+      text-align: center;
+      font-size: 0.85rem;
+      transition: height 0.5s;
+      h3 {
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+      a {
+        margin-top: 20px;
+        color: var(--color-button);
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 60px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--color-background);
+        text-align: center;
+      }
+    }
+  }
+  .project:hover {
+    img {
+      transform: scale(1.1);
+    }
+    .layer {
+      height: 100%;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid var(--color-button);
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--color-button);
+  transition: background-color 0.5s;
+}
+
+.btn:hover {
+  background-color: var(--color-button);
+  color: var(--color-background);
 }
 
 /*---------------RESPONSIVE DESIGNS-----------------*/

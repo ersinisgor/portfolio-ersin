@@ -19,9 +19,21 @@
   list-style: none;
 }
 
+.dark {
+  --color-background: #001233;
+  --color-font: #eae7dd;
+  --color-button: #ff006e;
+  --color-secondary: #efcb68;
+  --color-secondary-font: #5c677d;
+}
+
 *::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: var(--color-font);
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: var(--color-background);
 }
 
 *::-webkit-scrollbar {
@@ -40,6 +52,10 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+section {
+  padding: 8rem 5%;
 }
 
 h1,
@@ -125,7 +141,11 @@ nav .nav-container .menu-container .theme {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 1s;
   cursor: pointer;
+}
+nav .nav-container .menu-container .theme:active {
+  transform: translateY(-6px);
 }
 nav .nav-container .menu-container .theme i {
   font-size: 0.9rem;
@@ -168,7 +188,7 @@ nav .nav-container .controls .control i {
   pointer-events: none;
 }
 
-/*--Header---*/
+/*---------Header-----------*/
 .header-content {
   display: flex;
   gap: 3.6rem;
@@ -269,7 +289,7 @@ nav .nav-container .controls .control i {
   top: 0;
   right: 0;
   transform: translateX(100%);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
   z-index: -1;
   border-radius: 30px;
 }
@@ -289,10 +309,15 @@ nav .nav-container .controls .control i {
   filter: drop-shadow(-16px 16px 6px var(--box-shadow-2));
 }
 
-/* ABOUT */
-#about {
-  padding: 8rem 5%;
+/* ----------ABOUT--------- */
+.title {
+  color: var(--color-font);
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
 }
+
 #about .row {
   display: flex;
   justify-content: space-between;
@@ -307,13 +332,6 @@ nav .nav-container .controls .control i {
 }
 #about .row .about-col-2 {
   flex-basis: 60%;
-}
-#about .row .about-col-2 .about-title {
-  color: var(--color-font);
-  font-size: 60px;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  text-align: center;
 }
 #about .row .about-col-2 .about-content {
   font-family: "Nunito", sans-serif;
@@ -366,6 +384,84 @@ nav .nav-container .controls .control i {
 
 .tab-contents.active-tab {
   display: block;
+}
+
+/* ----------Portfolio-------------*/
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 2.5rem;
+  margin-top: 50px;
+}
+.projects .project {
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.projects .project img {
+  width: 100%;
+  border-radius: 1rem;
+  display: block;
+  transition: transform 0.5s;
+}
+.projects .project .layer {
+  width: 100%;
+  height: 0;
+  color: var(--color-background);
+  border-radius: 1rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), var(--color-button));
+  text-align: center;
+  font-size: 0.85rem;
+  transition: height 0.5s;
+}
+.projects .project .layer h3 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.projects .project .layer a {
+  margin-top: 20px;
+  color: var(--color-button);
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-background);
+  text-align: center;
+}
+.projects .project:hover img {
+  transform: scale(1.1);
+}
+.projects .project:hover .layer {
+  height: 100%;
+}
+
+.btn {
+  display: block;
+  margin: 50px auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid var(--color-button);
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--color-button);
+  transition: background-color 0.5s;
+}
+
+.btn:hover {
+  background-color: var(--color-button);
+  color: var(--color-background);
 }
 
 /*---------------RESPONSIVE DESIGNS-----------------*/
