@@ -20,11 +20,17 @@ themeBtn.addEventListener('click', () => {
   const themeButton = document.querySelector('.theme');
   const headerPhoto = document.querySelector('.right-header');
 
+  const h1 = document.querySelectorAll('h1');
+  const fullName = document.querySelector('.full-name');
+  h1.forEach(dark => dark.classList.toggle('dark'));
+  // h1.classList.toggle('dark');
+  fullName.classList.toggle('dark');
+
   if (darkTheme) {
-    themeButton.innerHTML = `<i class='bx bx-sun'></i>`;
-    headerPhoto.innerHTML = `<img src="images/white-profile-photo.png" alt="Profile Photo">`;
-  } else {
     themeButton.innerHTML = `<i class='bx bx-moon'></i>`;
+    // headerPhoto.innerHTML = `<img src="images/white-profile-photo.png" alt="Profile Photo">`;
+  } else {
+    themeButton.innerHTML = `<i class='bx bx-sun'></i>`;
     headerPhoto.innerHTML = `<img src="images/black-profile-photo.png" alt="Profile Photo">`;
   }
 });
