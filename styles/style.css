@@ -10,7 +10,7 @@
   --color-gradient-2: #d3cae2;
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.2);
   --box-shadow-2: rgba(92, 103, 125, 0.6);
-  --box-shadow-3: #2c3531;
+  --color-box-shadow-3: #2c3531;
 }
 
 *,
@@ -22,10 +22,12 @@
   list-style: none;
 }
 
+/* Light Theme */
 .light {
   --color-background: #d1e8e2;
   --color-font: #404041;
   --color-button: #a74c22;
+  --color-secondary: #ffcb9a;
   --color-secondary-font: #7a9e7e;
 }
 
@@ -79,8 +81,8 @@ h1 {
   width: fit-content;
 }
 
-h1.dark {
-  background: linear-gradient(to right, #e6c17a, #404041);
+h1.light {
+  background: linear-gradient(to right, var(--color-secondary), var(--color-font));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -107,7 +109,6 @@ nav .nav-container {
   z-index: 2;
 }
 nav .nav-container .logo {
-  color: var(--color-button);
   font-size: 3.4rem;
   font-weight: 600;
   letter-spacing: 3px;
@@ -206,7 +207,7 @@ nav .nav-container .controls .control i {
 
 /*---------Header-----------*/
 .btn {
-  padding: 0.6rem 2.8rem;
+  padding: 0.6rem 3.4rem;
   margin: 50px auto;
   display: block;
   font-weight: 500;
@@ -225,36 +226,37 @@ nav .nav-container .controls .control i {
   box-shadow: 0px 0px 10px 2px var(--color-secondary);
 }
 
+.btn.btn-2 {
+  background-color: var(--color-background);
+  color: var(--color-button);
+}
+
 .header-content {
   display: flex;
   gap: 3.6rem;
   padding: 6rem 5%;
   justify-content: space-between;
 }
-.header-content .left-header {
-  display: flex;
-}
-.header-content .left-header .social-icons {
+.header-content .social-icons {
   display: flex;
   flex-direction: column;
-  margin-right: 3.6rem;
   align-self: center;
 }
-.header-content .left-header .social-icons .cover {
+.header-content .social-icons .cover {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.header-content .left-header .social-icons .cover i {
+.header-content .social-icons .cover i {
   font-size: 1.4rem;
   padding: 0.5rem;
   margin: 0.2rem 0;
 }
-.header-content .left-header .social-icons .cover i:hover {
+.header-content .social-icons .cover i:hover {
   transform: scale(1.15);
   color: var(--color-font);
 }
-.header-content .left-header .social-icons::before {
+.header-content .social-icons::before {
   content: "";
   width: 1px;
   height: 3rem;
@@ -263,7 +265,7 @@ nav .nav-container .controls .control i {
   left: 50%;
   margin-bottom: 0.7rem;
 }
-.header-content .left-header .social-icons::after {
+.header-content .social-icons::after {
   content: "";
   width: 1px;
   height: 3rem;
@@ -272,22 +274,27 @@ nav .nav-container .controls .control i {
   left: 50%;
   margin-top: 0.7rem;
 }
+.header-content .left-header {
+  display: flex;
+}
 .header-content .left-header .text-container {
   color: var(--color-secondary-font);
   display: flex;
   flex-direction: column;
   align-self: flex-end;
-  align-items: center;
+  align-items: flex-start;
   max-width: 49rem;
+  min-width: 570px;
 }
 .header-content .left-header .text-container p {
   width: 100%;
-  text-align: center;
 }
 .header-content .left-header .text-container .greeting {
-  font-size: 3.6rem;
+  font-size: 4rem;
 }
 .header-content .left-header .text-container .full-name {
+  margin-top: -2.6rem;
+  margin-bottom: -1.8rem;
   background: linear-gradient(to right, var(--color-button), var(--color-gradient-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -307,14 +314,8 @@ nav .nav-container .controls .control i {
   font-family: "Allura", cursive;
   margin-right: 2px;
 }
-.header-content .left-header .text-container .full-name.dark {
-  background: linear-gradient(to right, #e6c17a, #a74c22);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .header-content .left-header .text-container .main-text {
   font-size: 3.2rem;
-  text-align: center;
 }
 .header-content .left-header .text-container .main-buttons {
   display: flex;
@@ -326,10 +327,6 @@ nav .nav-container .controls .control i {
   margin: 0;
   margin-top: 2rem;
 }
-.header-content .left-header .text-container .main-buttons .btn.btn-2 {
-  background-color: var(--color-background);
-  color: var(--color-button);
-}
 .header-content .right-header {
   display: flex;
 }
@@ -338,7 +335,16 @@ nav .nav-container .controls .control i {
   min-width: 26rem;
   max-width: 26rem;
   border-radius: 20px;
-  filter: drop-shadow(-16px 16px 6px var(--box-shadow-3));
+  filter: drop-shadow(-16px 16px 6px var(--color-box-shadow-3));
+}
+
+.header-content.light .left-header .text-container .full-name {
+  background: linear-gradient(to right, var(--color-secondary), var(--color-font));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header-content.light .right-header img {
+  filter: drop-shadow(-16px 16px 6px var(--box-shadow-2));
 }
 
 /* ----------ABOUT--------- */
@@ -423,62 +429,64 @@ nav .nav-container .controls .control i {
 
 /* ----------Portfolio-------------*/
 .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2.5rem;
   margin-top: 50px;
 }
-.projects .project {
-  border-radius: 1rem;
-  position: relative;
-  overflow: hidden;
+.projects .project-row {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 650px;
 }
-.projects .project img {
-  width: 100%;
-  border-radius: 1rem;
-  display: block;
-  transition: transform 0.5s;
+.projects .project-row .project-col-1 {
+  text-align: left;
+  flex-basis: 50%;
 }
-.projects .project .layer {
-  width: 100%;
-  height: 0;
-  color: var(--color-background);
-  border-radius: 1rem;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
+.projects .project-row .project-col-1 .project-title {
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  font-size: 2.5rem;
+}
+.projects .project-row .project-col-1 .project-content {
+  margin-bottom: 1.2rem;
+}
+.projects .project-row .project-col-1 .project-content .project-explain {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.projects .project-row .project-col-1 .project-content .technology {
+  color: var(--color-secondary-font);
+}
+.projects .project-row .project-col-1 .project-buttons {
+  display: flex;
+  justify-content: flex-start;
+}
+.projects .project-row .project-col2 {
+  flex-basis: 55%;
+}
+.projects .project-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 0 40px;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), var(--color-button));
-  text-align: center;
-  font-size: 0.85rem;
-  transition: height 0.5s;
+  border: 1px solid var(--color-button);
+  background-color: var(--color-button);
+  color: var(--color-background);
+  border-radius: 4px;
+  margin-right: 2rem;
+  width: 6rem;
+  height: 2.8rem;
+  font-size: 1.3rem;
 }
-.projects .project .layer h3 {
-  font-weight: 500;
-  margin-bottom: 20px;
+.projects .project-btn:hover {
+  transform: scale(1.03);
 }
-.projects .project .layer a {
-  margin-top: 20px;
+.projects .project-btn.project-btn-2 {
+  background-color: var(--color-background);
   color: var(--color-button);
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 60px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--color-background);
-  text-align: center;
 }
-.projects .project:hover img {
-  transform: scale(1.1);
-}
-.projects .project:hover .layer {
-  height: 100%;
+.projects .project-btn.project-btn-2 i {
+  font-size: 1.55rem;
 }
 
 /*---------------RESPONSIVE DESIGNS-----------------*/

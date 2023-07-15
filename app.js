@@ -16,22 +16,25 @@ function makeActive(active) {
 const themeBtn = document.querySelector('.theme');
 themeBtn.addEventListener('click', () => {
   let element = document.body;
-  const darkTheme = element.classList.toggle('dark');
-  const themeButton = document.querySelector('.theme');
-  const headerPhoto = document.querySelector('.right-header');
+  const lightTheme = element.classList.toggle('light');
+  // const themeButton = document.querySelector('.theme');
+  // const themeButton = document.querySelector('.theme');
+  // const headerPhoto = document.querySelector('.right-header');
 
   const h1 = document.querySelectorAll('h1');
-  const fullName = document.querySelector('.full-name');
-  h1.forEach(dark => dark.classList.toggle('dark'));
-  // h1.classList.toggle('dark');
-  fullName.classList.toggle('dark');
+  // const fullName = document.querySelector('.full-name');
+  const headerContent = document.querySelector('.header-content');
+  h1.forEach(light => light.classList.toggle('light'));
+  // h1.classList.toggle('light');
+  // fullName.classList.toggle('light');
+  headerContent.classList.toggle('light');
 
-  if (darkTheme) {
-    themeButton.innerHTML = `<i class='bx bx-moon'></i>`;
+  if (lightTheme) {
+    themeBtn.innerHTML = `<i class='bx bx-moon'></i>`;
     // headerPhoto.innerHTML = `<img src="images/white-profile-photo.png" alt="Profile Photo">`;
   } else {
-    themeButton.innerHTML = `<i class='bx bx-sun'></i>`;
-    headerPhoto.innerHTML = `<img src="images/black-profile-photo.png" alt="Profile Photo">`;
+    themeBtn.innerHTML = `<i class='bx bx-sun'></i>`;
+    // headerPhoto.innerHTML = `<img src="images/black-profile-photo.png" alt="Profile Photo">`;
   }
 });
 
@@ -72,7 +75,7 @@ themeBtn.addEventListener('click', () => {
 //   const themeBtn = document.querySelector('.theme');
 //   themeBtn.addEventListener('click', () => {
 //     let element = document.body;
-//     element.classList.toggle('dark');
+//     element.classList.toggle('light');
 //   });
 // }
 
