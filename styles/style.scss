@@ -345,6 +345,10 @@ a {
   // font-family: 'Nunito', sans-serif;
 }
 
+img {
+  width: 100%;
+}
+
 /*--Navbar--*/
 nav {
   // position: fixed;
@@ -699,7 +703,7 @@ nav {
   .right-header {
     display: flex;
     img {
-      width: 100%;
+      // width: 100%;
       // min-width: 26rem;
       min-width: 26rem;
       // max-width: 31rem;
@@ -757,7 +761,7 @@ nav {
     .about-col-1 {
       flex-basis: 35%;
       img {
-        width: 100%;
+        // width: 100%;
         border-radius: 20px;
       }
     }
@@ -825,15 +829,17 @@ nav {
   display: flex;
   flex-wrap: wrap;
   // grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 2.5rem;
-  margin-top: 50px;
+  // gap: 2.5rem;
+  // margin-top: 50px;
   .project-row {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 650px;
+    max-width: 100%;
+    margin: 50px 0;
     .project-col-1 {
       text-align: left;
-      flex-basis: 50%;
+      flex-basis: 39%;
       .project-title {
         font-weight: 700;
         margin-bottom: 1.2rem;
@@ -854,8 +860,15 @@ nav {
         justify-content: flex-start;
       }
     }
-    .project-col2 {
-      flex-basis: 55%;
+    .project-col-2 {
+      flex-basis: 59%;
+      transition: transform 0.5s ease-in-out;
+      // max-width: 325px;
+    }
+    .project-col-2:hover {
+      img {
+        transform: scale(0.9);
+      }
     }
   }
 
