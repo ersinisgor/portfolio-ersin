@@ -223,6 +223,7 @@ nav .nav-container .controls .control i {
   font-size: 1.1rem;
   transition: background-color 0.5s;
   text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
 }
 
 .btn:hover {
@@ -237,7 +238,6 @@ nav .nav-container .controls .control i {
 
 .header-content {
   display: flex;
-  gap: 3.6rem;
   padding: 6rem 5%;
   justify-content: space-between;
 }
@@ -278,27 +278,26 @@ nav .nav-container .controls .control i {
   left: 50%;
   margin-top: 0.7rem;
 }
-.header-content .left-header {
+.header-content .hero-text {
   display: flex;
 }
-.header-content .left-header .text-container {
+.header-content .hero-text .text-container {
   color: var(--color-secondary-font);
   display: flex;
   flex-direction: column;
   align-self: flex-end;
   align-items: flex-start;
-  max-width: 49rem;
-  min-width: 570px;
+  min-width: 35rem;
 }
-.header-content .left-header .text-container p {
+.header-content .hero-text .text-container p {
   width: 100%;
 }
-.header-content .left-header .text-container .greeting {
+.header-content .hero-text .text-container .greeting {
   font-size: 4rem;
 }
-.header-content .left-header .text-container .full-name {
-  margin-top: -2.6rem;
-  margin-bottom: -1.8rem;
+.header-content .hero-text .text-container .full-name {
+  margin-top: -1.8rem;
+  margin-bottom: -1rem;
   background: linear-gradient(to right, var(--color-button), var(--color-gradient-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -307,46 +306,45 @@ nav .nav-container .controls .control i {
   font-weight: 500;
   white-space: nowrap;
 }
-.header-content .left-header .text-container .full-name span {
+.header-content .hero-text .text-container .full-name span {
   display: inline-block;
 }
-.header-content .left-header .text-container .full-name .name::first-letter {
+.header-content .hero-text .text-container .full-name .name::first-letter {
   font-size: 10.8rem;
   margin-right: 4px;
 }
-.header-content .left-header .text-container .full-name .surname::first-letter {
+.header-content .hero-text .text-container .full-name .surname::first-letter {
   font-family: "Allura", cursive;
   margin-right: 2px;
 }
-.header-content .left-header .text-container .main-text {
+.header-content .hero-text .text-container .main-text {
   font-size: 3.2rem;
 }
-.header-content .left-header .text-container .main-buttons {
+.header-content .hero-text .text-container .main-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
 }
-.header-content .left-header .text-container .main-buttons .btn {
+.header-content .hero-text .text-container .main-buttons .btn {
   margin: 0;
   margin-top: 2rem;
 }
-.header-content .right-header {
+.header-content .hero-photo {
   display: flex;
 }
-.header-content .right-header img {
-  min-width: 26rem;
+.header-content .hero-photo img {
   max-width: 26rem;
   border-radius: 20px;
   filter: drop-shadow(-16px 16px 6px var(--color-box-shadow-3));
 }
 
-.header-content.light .left-header .text-container .full-name {
+.header-content.light .hero-text .text-container .full-name {
   background: linear-gradient(to right, var(--color-secondary), var(--color-font));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.header-content.light .right-header img {
+.header-content.light .hero-photo img {
   filter: drop-shadow(-16px 16px 6px var(--box-shadow-2));
 }
 
@@ -455,7 +453,7 @@ nav .nav-container .controls .control i {
 }
 .projects .project-row .project-col-1 .project-content .project-explain {
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .projects .project-row .project-col-1 .project-content .technology {
   color: var(--color-secondary-font);
@@ -466,10 +464,14 @@ nav .nav-container .controls .control i {
 }
 .projects .project-row .project-col-2 {
   flex-basis: 59%;
-  transition: transform 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex;
 }
 .projects .project-row .project-col-2:hover img {
-  transform: scale(0.9);
+  transform: scale(1.1);
+  transition: all 1s ease-in-out;
 }
 .projects .project-btn {
   display: flex;
@@ -480,9 +482,12 @@ nav .nav-container .controls .control i {
   color: var(--color-background);
   border-radius: 4px;
   margin-right: 2rem;
-  width: 6rem;
-  height: 2.8rem;
-  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  width: 160px;
+  font-size: 1rem;
+}
+.projects .project-btn i {
+  margin-right: 1rem;
 }
 .projects .project-btn:hover {
   transform: scale(1.03);
@@ -492,7 +497,7 @@ nav .nav-container .controls .control i {
   color: var(--color-button);
 }
 .projects .project-btn.project-btn-2 i {
-  font-size: 1.55rem;
+  font-size: 1.15rem;
 }
 
 /*---------------RESPONSIVE DESIGNS-----------------*/
@@ -500,30 +505,27 @@ nav .nav-container .controls .control i {
   nav .nav-container .logo {
     font-size: 2rem;
   }
-  .header-content {
-    gap: 2rem;
-  }
-  .header-content .left-header .text-container .greeting {
+  .header-content .hero-text .text-container .greeting {
     font-size: 2rem;
   }
-  .header-content .left-header .text-container .full-name {
+  .header-content .hero-text .text-container .full-name {
     font-size: 3rem;
     white-space: pre-line;
   }
-  .header-content .left-header .text-container .full-name .name::first-letter {
+  .header-content .hero-text .text-container .full-name .name::first-letter {
     font-size: 3.4rem;
   }
-  .header-content .left-header .text-container .main-text {
+  .header-content .hero-text .text-container .main-text {
     font-size: 1.8rem;
   }
-  .header-content .left-header .text-container .main-btn .btn-text,
-  .header-content .left-header .text-container .main-btn .btn-icon {
+  .header-content .hero-text .text-container .main-btn .btn-text,
+  .header-content .hero-text .text-container .main-btn .btn-icon {
     font-size: 0.6rem;
   }
-  .header-content .left-header .text-container .main-btn .btn-text {
+  .header-content .hero-text .text-container .main-btn .btn-text {
     padding: 0 0.4rem 0 1.2rem;
   }
-  .header-content .left-header .text-container .main-btn .btn-icon {
+  .header-content .hero-text .text-container .main-btn .btn-icon {
     padding: 0.4rem;
   }
 }
@@ -538,13 +540,26 @@ nav .nav-container .controls .control i {
     display: flex;
   }
   .header-content {
-    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
+    align-items: center;
     padding: 2rem 5%;
+    gap: 4rem;
   }
-  .header-content .left-header {
+  .header-content .social-icons {
+    flex-direction: row;
+  }
+  .header-content .social-icons::before {
+    height: 1px;
+    width: 3rem;
+    left: 0;
+    top: 100%;
+    margin-right: 0.7rem;
+    margin-bottom: 0;
+  }
+  .header-content .hero-text {
     flex-direction: column;
   }
-  .header-content .left-header .social-icons {
+  .header-content .hero-text .social-icons {
     flex-direction: row;
     border-bottom-right-radius: unset;
     border-bottom-left-radius: unset;
@@ -552,41 +567,41 @@ nav .nav-container .controls .control i {
     margin: 3rem 0;
     border-radius: 20px;
   }
-  .header-content .left-header .social-icons i {
+  .header-content .hero-text .social-icons i {
     margin: 0 1.2rem;
   }
-  .header-content .left-header .text-container {
+  .header-content .hero-text .text-container {
     max-width: unset;
   }
-  .header-content .right-header img {
+  .header-content .hero-photo img {
     max-width: unset;
     min-width: unset;
   }
 }
 @media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
-  .header-content .left-header .text-container .greeting {
+  .header-content .hero-text .text-container .greeting {
     font-size: 2.8rem;
   }
-  .header-content .left-header .text-container .full-name {
+  .header-content .hero-text .text-container .full-name {
     font-size: 6rem;
   }
-  .header-content .left-header .text-container .full-name .name::first-letter {
+  .header-content .hero-text .text-container .full-name .name::first-letter {
     font-size: 8rem;
   }
-  .header-content .left-header .text-container .main-text {
+  .header-content .hero-text .text-container .main-text {
     font-size: 2.4rem;
   }
-  .header-content .left-header .text-container .main-btn .btn-text,
-  .header-content .left-header .text-container .main-btn .btn-icon {
+  .header-content .hero-text .text-container .main-btn .btn-text,
+  .header-content .hero-text .text-container .main-btn .btn-icon {
     font-size: 1.6rem;
   }
-  .header-content .left-header .text-container .main-btn .btn-icon {
+  .header-content .hero-text .text-container .main-btn .btn-icon {
     padding: 1rem;
   }
 }
 @media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
   nav .nav-container .logo {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
   }
   nav .nav-container .menu-container .menu li a {
     font-size: 1rem;
@@ -602,30 +617,45 @@ nav .nav-container .controls .control i {
   nav .nav-container .menu-container .theme i {
     font-size: 0.6rem;
   }
-  .header-content {
-    gap: 2rem;
+  .header-content .social-icons .cover i {
+    font-size: 1.1rem;
+    padding: 0.3rem;
   }
-  .header-content .left-header .text-container {
-    max-width: unset;
+  .header-content .social-icons::before,
+  .header-content .social-icons::after {
+    height: 2rem;
   }
-  .header-content .left-header .text-container .greeting {
+  .header-content .hero-text .text-container {
+    min-width: 18rem;
+  }
+  .header-content .hero-text .text-container .greeting {
     font-size: 2.7rem;
   }
-  .header-content .left-header .text-container .full-name {
-    font-size: 4.6rem;
+  .header-content .hero-text .text-container .full-name {
+    font-size: 4.4rem;
+    margin: 0;
   }
-  .header-content .left-header .text-container .full-name .name::first-letter {
+  .header-content .hero-text .text-container .full-name .name::first-letter {
     font-size: 6rem;
   }
-  .header-content .left-header .text-container .main-text {
-    font-size: 1.8rem;
+  .header-content .hero-text .text-container .main-text {
+    font-size: 1.7rem;
   }
-  .header-content .right-header img {
-    min-width: 18.2rem;
-    max-width: unset;
+  .header-content .hero-text .text-container .main-buttons {
+    gap: 1rem;
+  }
+  .header-content .hero-text .text-container .main-buttons .btn {
+    padding: 0.4rem 1.6rem;
+    font-size: 1rem;
+  }
+  .header-content .hero-photo img {
+    max-width: 18rem;
   }
 }
 @media only screen and (min-device-width: 1025px) and (max-device-width: 1200px) {
+  .btn {
+    padding: 0.6rem 2.4rem;
+  }
   nav .nav-container .logo {
     font-size: 3rem;
   }
@@ -643,20 +673,33 @@ nav .nav-container .controls .control i {
   nav .nav-container .menu-container .theme i {
     font-size: 0.8rem;
   }
-  .header-content {
-    gap: 2rem;
+  .header-content .social-icons .cover i {
+    font-size: 1.3rem;
+    padding: 0.4rem;
   }
-  .header-content .left-header .text-container .greeting {
+  .header-content .social-icons::before,
+  .header-content .social-icons::after {
+    height: 2.5rem;
+  }
+  .header-content .hero-text .text-container {
+    min-width: 26rem;
+  }
+  .header-content .hero-text .text-container .greeting {
     font-size: 3rem;
   }
-  .header-content .left-header .text-container .full-name {
-    font-size: 6rem;
+  .header-content .hero-text .text-container .full-name {
+    font-size: 6.2rem;
+    margin-top: -1rem;
+    margin-bottom: -0.5rem;
   }
-  .header-content .left-header .text-container .full-name .name::first-letter {
+  .header-content .hero-text .text-container .full-name .name::first-letter {
     font-size: 8rem;
   }
-  .header-content .left-header .text-container .main-text {
+  .header-content .hero-text .text-container .main-text {
     font-size: 2.4rem;
+  }
+  .header-content .hero-photo img {
+    max-width: 22rem;
   }
 }
 @media (min-width: 1700px) {
@@ -668,31 +711,30 @@ nav .nav-container .controls .control i {
   }
   .header-content {
     justify-content: center;
-    gap: 5.4rem;
   }
-  .header-content .left-header {
+  .header-content .hero-text {
     max-width: 54rem;
   }
-  .header-content .left-header .greeting {
+  .header-content .hero-text .greeting {
     font-size: 4.7rem;
   }
-  .header-content .left-header .full-name {
+  .header-content .hero-text .full-name {
     font-size: 10rem;
   }
-  .header-content .left-header .full-name .name::first-letter {
+  .header-content .hero-text .full-name .name::first-letter {
     font-size: 13rem;
   }
-  .header-content .left-header .main-text {
+  .header-content .hero-text .main-text {
     font-size: 3.8rem;
   }
-  .header-content .left-header .main-btn .btn-text,
-  .header-content .left-header .main-btn .btn-icon {
+  .header-content .hero-text .main-btn .btn-text,
+  .header-content .hero-text .main-btn .btn-icon {
     font-size: 1.8rem;
   }
-  .header-content .left-header .main-btn .btn-icon {
+  .header-content .hero-text .main-btn .btn-icon {
     padding: 1.2rem;
   }
-  .header-content .right-header img {
+  .header-content .hero-photo img {
     max-width: 40rem;
   }
 }/*# sourceMappingURL=style.css.map */

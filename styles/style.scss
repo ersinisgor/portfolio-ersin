@@ -506,6 +506,7 @@ nav {
   text-transform: uppercase;
   // line-height: 2rem;
   // font-family: 'Nunito', sans-serif;
+  transition: all 0.4s ease-in-out;
 }
 
 .btn:hover {
@@ -523,7 +524,7 @@ nav {
 
 .header-content {
   display: flex;
-  gap: 3.6rem;
+  // gap: 3.6rem;
   padding: 6rem 5%;
   justify-content: space-between;
   // margin-top: 2rem;
@@ -598,16 +599,17 @@ nav {
     left: 50%;
     margin-top: 0.7rem;
   }
-  .left-header {
+  .hero-text {
     display: flex;
+    // max-width: 49rem;
+
     .text-container {
       color: var(--color-secondary-font);
       display: flex;
       flex-direction: column;
       align-self: flex-end;
       align-items: flex-start;
-      max-width: 49rem;
-      min-width: 570px;
+      min-width: 35rem;
       p {
         width: 100%;
         // text-align: center;
@@ -617,8 +619,8 @@ nav {
         font-size: 4rem;
       }
       .full-name {
-        margin-top: -2.6rem;
-        margin-bottom: -1.8rem;
+        margin-top: -1.8rem;
+        margin-bottom: -1rem;
         // background: linear-gradient(to right, #e6c17a, #404041);
         background: linear-gradient(
           to right,
@@ -651,43 +653,6 @@ nav {
         // font-size: 3.6rem;
         // text-align: center;
       }
-      .main-btn {
-        // border-radius: 2rem;
-
-        // display: flex;
-        // align-self: center;
-        // align-items: center;
-        // overflow: hidden;
-
-        // position: relative;
-
-        // .btn-icon {
-        //   background-color: var(--color-button);
-        //   display: flex;
-        //   align-items: center;
-        //   justify-content: center;
-        //   border-radius: 50%;
-        //   padding: 0.7rem;
-        // }
-        // &::before {
-        //   content: '';
-        //   position: absolute;
-        //   top: 0;
-        //   right: 0;
-        //   transform: translateX(100%);
-        //   transition: all 0.5s ease-in-out;
-        //   z-index: -1;
-        //   border-radius: 30px;
-        // }
-        // &:hover {
-        //   &::before {
-        //     width: 100%;
-        //     height: 100%;
-        //     background-color: var(--color-button);
-        //     transform: translateX(0);
-        //   }
-        // }
-      }
       .main-buttons {
         display: flex;
         flex-wrap: wrap;
@@ -700,12 +665,12 @@ nav {
       }
     }
   }
-  .right-header {
+  .hero-photo {
     display: flex;
     img {
       // width: 100%;
       // min-width: 26rem;
-      min-width: 26rem;
+      // min-width: 26rem;
       // max-width: 31rem;
       max-width: 26rem;
       border-radius: 20px;
@@ -714,7 +679,7 @@ nav {
   }
 }
 .header-content.light {
-  .left-header {
+  .hero-text {
     .text-container {
       .full-name {
         // background: linear-gradient(to right, #e6c17a, #d3cae2);
@@ -729,7 +694,7 @@ nav {
       }
     }
   }
-  .right-header {
+  .hero-photo {
     img {
       filter: drop-shadow(-16px 16px 6px var(--box-shadow-2));
     }
@@ -849,7 +814,7 @@ nav {
         margin-bottom: 1.2rem;
         .project-explain {
           margin-bottom: 0.5rem;
-          font-size: 1rem;
+          font-size: 1.1rem;
         }
         .technology {
           color: var(--color-secondary-font);
@@ -862,12 +827,15 @@ nav {
     }
     .project-col-2 {
       flex-basis: 59%;
-      transition: transform 0.5s ease-in-out;
-      // max-width: 325px;
+      transition: all 1s ease-in-out;
+      overflow: hidden;
+      border-radius: 20px;
+      display: flex;
     }
     .project-col-2:hover {
       img {
-        transform: scale(0.9);
+        transform: scale(1.1);
+        transition: all 1s ease-in-out;
       }
     }
   }
@@ -881,9 +849,14 @@ nav {
     color: var(--color-background);
     border-radius: 4px;
     margin-right: 2rem;
-    width: 6rem;
-    height: 2.8rem;
-    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    // width: 6rem;
+    width: 160px;
+    // height: 2.8rem;
+    font-size: 1rem;
+    i {
+      margin-right: 1rem;
+    }
   }
 
   .project-btn:hover {
@@ -894,7 +867,7 @@ nav {
     background-color: var(--color-background);
     color: var(--color-button);
     i {
-      font-size: 1.55rem;
+      font-size: 1.15rem;
     }
   }
   // .project {
@@ -981,8 +954,8 @@ nav {
     }
   }
   .header-content {
-    gap: 2rem;
-    .left-header {
+    // gap: 2rem;
+    .hero-text {
       .text-container {
         .greeting {
           font-size: 2rem;
@@ -1030,9 +1003,29 @@ nav {
     }
   }
   .header-content {
-    flex-wrap: wrap-reverse;
+    // flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
+    align-items: center;
     padding: 2rem 5%;
-    .left-header {
+    gap: 4rem;
+    .social-icons {
+      flex-direction: row;
+      // position: relative;
+      .cover {
+        i {
+        }
+      }
+    }
+    .social-icons::before {
+      height: 1px;
+      width: 3rem;
+      left: 0;
+      top: 100%;
+      margin-right: 0.7rem;
+      margin-bottom: 0;
+      // position: absolute;
+    }
+    .hero-text {
       flex-direction: column;
       .social-icons {
         flex-direction: row;
@@ -1049,7 +1042,7 @@ nav {
         max-width: unset;
       }
     }
-    .right-header {
+    .hero-photo {
       img {
         max-width: unset;
         min-width: unset;
@@ -1060,7 +1053,7 @@ nav {
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
   .header-content {
-    .left-header {
+    .hero-text {
       .text-container {
         .greeting {
           font-size: 2.8rem;
@@ -1093,7 +1086,7 @@ nav {
   nav {
     .nav-container {
       .logo {
-        font-size: 2.2rem;
+        font-size: 2.6rem;
       }
       .menu-container {
         .menu {
@@ -1118,28 +1111,50 @@ nav {
     }
   }
   .header-content {
-    gap: 2rem;
-    .left-header {
+    // gap: 2rem;
+    .social-icons {
+      .cover {
+        i {
+          font-size: 1.1rem;
+          padding: 0.3rem;
+        }
+      }
+    }
+    .social-icons::before,
+    .social-icons::after {
+      height: 2rem;
+    }
+    .hero-text {
       .text-container {
-        max-width: unset;
+        // max-width: unset;
+        min-width: 18rem;
         .greeting {
           font-size: 2.7rem;
         }
         .full-name {
-          font-size: 4.6rem;
+          font-size: 4.4rem;
+          margin: 0;
           .name::first-letter {
             font-size: 6rem;
           }
         }
         .main-text {
-          font-size: 1.8rem;
+          font-size: 1.7rem;
+        }
+        .main-buttons {
+          gap: 1rem;
+          .btn {
+            padding: 0.4rem 1.6rem;
+            font-size: 1rem;
+          }
         }
       }
     }
-    .right-header {
+    .hero-photo {
       img {
-        min-width: 18.2rem;
-        max-width: unset;
+        // min-width: 18.2rem;
+        max-width: 18rem;
+        // max-width: unset;
       }
     }
   }
@@ -1147,6 +1162,9 @@ nav {
 
 // Desktops and Large screens
 @media only screen and (min-device-width: 1025px) and (max-device-width: 1200px) {
+  .btn {
+    padding: 0.6rem 2.4rem;
+  }
   nav {
     .nav-container {
       .logo {
@@ -1175,14 +1193,29 @@ nav {
     }
   }
   .header-content {
-    gap: 2rem;
-    .left-header {
+    // gap: 2rem;
+    .social-icons {
+      .cover {
+        i {
+          font-size: 1.3rem;
+          padding: 0.4rem;
+        }
+      }
+    }
+    .social-icons::before,
+    .social-icons::after {
+      height: 2.5rem;
+    }
+    .hero-text {
       .text-container {
+        min-width: 26rem;
         .greeting {
           font-size: 3rem;
         }
         .full-name {
-          font-size: 6rem;
+          font-size: 6.2rem;
+          margin-top: -1rem;
+          margin-bottom: -0.5rem;
           .name::first-letter {
             font-size: 8rem;
           }
@@ -1190,6 +1223,11 @@ nav {
         .main-text {
           font-size: 2.4rem;
         }
+      }
+    }
+    .hero-photo {
+      img {
+        max-width: 22rem;
       }
     }
   }
@@ -1215,8 +1253,8 @@ nav {
   }
   .header-content {
     justify-content: center;
-    gap: 5.4rem;
-    .left-header {
+    // gap: 5.4rem;
+    .hero-text {
       max-width: 54rem;
       .greeting {
         font-size: 4.7rem;
@@ -1240,7 +1278,7 @@ nav {
         }
       }
     }
-    .right-header {
+    .hero-photo {
       img {
         max-width: 40rem;
       }
