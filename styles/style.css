@@ -99,14 +99,28 @@ img {
   width: 100%;
 }
 
+.photo {
+  max-width: 26rem;
+  border-radius: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  padding: 6rem 5%;
+}
+
 /*--Navbar--*/
 nav .nav-container {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  flex-wrap: wrap;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   background-color: var(--color-background);
   padding: 0 5%;
@@ -237,31 +251,26 @@ nav .nav-container .controls .control i {
   color: var(--color-button);
 }
 
-.header-content {
-  display: flex;
-  padding: 6rem 5%;
-  justify-content: space-between;
-}
-.header-content .social-icons {
+.row .social-icons {
   display: flex;
   flex-direction: column;
   align-self: center;
 }
-.header-content .social-icons .cover {
+.row .social-icons .cover {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.header-content .social-icons .cover i {
+.row .social-icons .cover i {
   font-size: 1.4rem;
   padding: 0.5rem;
   margin: 0.2rem 0;
 }
-.header-content .social-icons .cover i:hover {
+.row .social-icons .cover i:hover {
   transform: scale(1.15);
   color: var(--color-font);
 }
-.header-content .social-icons::before {
+.row .social-icons::before {
   content: "";
   width: 1px;
   height: 3rem;
@@ -270,7 +279,7 @@ nav .nav-container .controls .control i {
   left: 50%;
   margin-bottom: 0.7rem;
 }
-.header-content .social-icons::after {
+.row .social-icons::after {
   content: "";
   width: 1px;
   height: 3rem;
@@ -279,10 +288,10 @@ nav .nav-container .controls .control i {
   left: 50%;
   margin-top: 0.7rem;
 }
-.header-content .hero-text {
+.row .hero-text {
   display: flex;
 }
-.header-content .hero-text .text-container {
+.row .hero-text .text-container {
   color: var(--color-secondary-font);
   display: flex;
   flex-direction: column;
@@ -290,13 +299,13 @@ nav .nav-container .controls .control i {
   align-items: flex-start;
   min-width: 35rem;
 }
-.header-content .hero-text .text-container p {
+.row .hero-text .text-container p {
   width: 100%;
 }
-.header-content .hero-text .text-container .greeting {
+.row .hero-text .text-container .greeting {
   font-size: 4rem;
 }
-.header-content .hero-text .text-container .full-name {
+.row .hero-text .text-container .full-name {
   margin-top: -1.8rem;
   margin-bottom: -1rem;
   background: linear-gradient(to right, var(--color-button), var(--color-gradient-2));
@@ -307,44 +316,42 @@ nav .nav-container .controls .control i {
   font-weight: 500;
   white-space: nowrap;
 }
-.header-content .hero-text .text-container .full-name span {
+.row .hero-text .text-container .full-name span {
   display: inline-block;
 }
-.header-content .hero-text .text-container .full-name .name::first-letter {
+.row .hero-text .text-container .full-name .name::first-letter {
   font-size: 10.8rem;
   margin-right: 4px;
 }
-.header-content .hero-text .text-container .full-name .surname::first-letter {
+.row .hero-text .text-container .full-name .surname::first-letter {
   font-family: "Allura", cursive;
   margin-right: 2px;
 }
-.header-content .hero-text .text-container .main-text {
+.row .hero-text .text-container .main-text {
   font-size: 3.2rem;
 }
-.header-content .hero-text .text-container .main-buttons {
+.row .hero-text .text-container .main-buttons {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
 }
-.header-content .hero-text .text-container .main-buttons .btn {
+.row .hero-text .text-container .main-buttons .btn {
   margin: 0;
   margin-top: 2rem;
 }
-.header-content .hero-photo {
+.row .hero-photo {
   display: flex;
 }
-.header-content .hero-photo img {
-  max-width: 26rem;
-  border-radius: 20px;
+.row .hero-photo img {
   filter: drop-shadow(-16px 16px 6px var(--color-box-shadow-3));
 }
 
-.header-content.light .hero-text .text-container .full-name {
+.row.light .hero-text .text-container .full-name {
   background: linear-gradient(to right, var(--color-gradient-1), var(--color-font));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.header-content.light .hero-photo img {
+.row.light .hero-photo img {
   filter: drop-shadow(-16px 16px 6px var(--box-shadow-2));
 }
 
@@ -363,13 +370,9 @@ nav .nav-container .controls .control i {
 #about .row {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 #about .row .about-col-1 {
   flex-basis: 35%;
-}
-#about .row .about-col-1 img {
-  border-radius: 20px;
 }
 #about .row .about-col-2 {
   flex-basis: 60%;
@@ -502,253 +505,274 @@ nav .nav-container .controls .control i {
 
 /*---------------RESPONSIVE DESIGNS-----------------*/
 @media (max-width: 480px) {
-  nav .nav-container .logo {
+  .photo {
+    max-width: 20rem;
+  }
+  #home .container nav .nav-container .logo {
     font-size: 2rem;
   }
-  .header-content .hero-text .text-container .greeting {
+  #home .container .row .social-icons .cover i {
+    font-size: 1.2rem;
+    margin: 0 0.2rem;
+  }
+  #home .container .row .social-icons::before,
+  #home .container .row .social-icons::after {
+    display: none;
+  }
+  #home .container .row .hero-text .text-container .greeting {
     font-size: 2rem;
   }
-  .header-content .hero-text .text-container .full-name {
+  #home .container .row .hero-text .text-container .full-name {
     font-size: 3rem;
     white-space: pre-line;
   }
-  .header-content .hero-text .text-container .full-name .name::first-letter {
+  #home .container .row .hero-text .text-container .full-name .name::first-letter {
     font-size: 3.4rem;
   }
-  .header-content .hero-text .text-container .main-text {
+  #home .container .row .hero-text .text-container .main-text {
     font-size: 1.8rem;
   }
-  .header-content .hero-text .text-container .main-buttons {
+  #home .container .row .hero-text .text-container .main-buttons {
+    flex-direction: column;
     flex-wrap: wrap;
+    gap: unset;
+    width: 100%;
+    align-items: center;
   }
-  .header-content .hero-text .text-container .main-buttons .btn {
+  #home .container .row .hero-text .text-container .main-buttons .btn {
     font-size: 1rem;
-    width: 9rem;
-  }
-  .header-content .hero-photo img {
-    max-width: 20rem;
   }
 }
 @media (max-width: 768px) {
+  .row {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 4rem;
+  }
+  .photo {
+    max-width: unset;
+  }
   section {
     padding: 3rem 5%;
   }
-  nav .nav-container {
-    position: static;
+  #home .container {
+    padding-top: 0;
   }
-  nav .nav-container .menu-container .menu {
+  #home .container nav {
+    margin-bottom: 4rem;
+  }
+  #home .container nav .nav-container {
+    position: static;
+    padding: 0;
+  }
+  #home .container nav .nav-container .menu-container .menu {
     display: none;
   }
-  nav .nav-container .controls {
+  #home .container nav .nav-container .menu-container .theme {
+    margin-left: 0;
+  }
+  #home .container nav .nav-container .controls {
     display: flex;
   }
-  .header-content {
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 2rem 5%;
-    gap: 4rem;
-  }
-  .header-content .social-icons {
+  #home .container .row .social-icons {
     flex-direction: row;
     align-self: unset;
     align-items: center;
     margin-top: 2rem;
   }
-  .header-content .social-icons .cover i {
-    font-size: 1.6rem;
-    margin: 0 1rem;
+  #home .container .row .hero-text {
+    flex-direction: column;
+    align-items: center;
   }
-  .header-content .social-icons::before {
+  #home .container .row .hero-text .text-container {
+    min-width: unset;
+    align-items: center;
+  }
+  #home .container .row .hero-text .text-container .greeting,
+  #home .container .row .hero-text .text-container .full-name,
+  #home .container .row .hero-text .text-container .main-text {
+    text-align: center;
+  }
+  #home .container .row .hero-text .text-container .full-name {
+    margin: 0;
+  }
+  #about .about-container .row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .btn {
+    width: 12rem;
+  }
+  #home .container .row .social-icons .cover i {
+    font-size: 1.6rem;
+    margin: 0 0.5rem;
+  }
+  #home .container .row .social-icons::before {
     height: 1px;
     width: 3rem;
     left: 0;
     margin-right: 0.7rem;
     margin-bottom: 0;
   }
-  .header-content .social-icons::after {
+  #home .container .row .social-icons::after {
     height: 1px;
     width: 3rem;
     left: 0;
     margin-left: 0.7rem;
     margin-top: 0;
   }
-  .header-content .hero-text {
-    flex-direction: column;
-    align-items: center;
-  }
-  .header-content .hero-text .text-container {
-    min-width: unset;
-    align-items: center;
-  }
-  .header-content .hero-text .text-container .greeting,
-  .header-content .hero-text .text-container .full-name,
-  .header-content .hero-text .text-container .main-text {
-    text-align: center;
-  }
-  .header-content .hero-text .text-container .full-name {
-    margin: 0;
-  }
-  .header-content .hero-photo img {
-    min-width: unset;
-  }
-}
-@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
-  .header-content .hero-text .text-container .greeting {
+  #home .container .row .hero-text .text-container .greeting {
     font-size: 2.8rem;
   }
-  .header-content .hero-text .text-container .full-name {
+  #home .container .row .hero-text .text-container .full-name {
     font-size: 6rem;
   }
-  .header-content .hero-text .text-container .full-name .name::first-letter {
+  #home .container .row .hero-text .text-container .full-name .name::first-letter {
     font-size: 8rem;
   }
-  .header-content .hero-text .text-container .main-text {
+  #home .container .row .hero-text .text-container .main-text {
     font-size: 2.4rem;
-  }
-  .header-content .hero-photo img {
-    max-width: 30rem;
   }
 }
 @media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
-  nav .nav-container .logo {
+  .photo {
+    max-width: 18rem;
+  }
+  #home .container nav .nav-container .logo {
     font-size: 2.6rem;
   }
-  nav .nav-container .menu-container .menu li a {
+  #home .container nav .nav-container .menu-container .menu li a {
     font-size: 1rem;
   }
-  nav .nav-container .menu-container .menu li:nth-child(2n) {
+  #home .container nav .nav-container .menu-container .menu li:nth-child(2n) {
     margin: 0 1.2rem;
   }
-  nav .nav-container .menu-container .theme {
+  #home .container nav .nav-container .menu-container .theme {
     margin-left: 2.5rem;
     width: 1.2rem;
     height: 1.2rem;
   }
-  nav .nav-container .menu-container .theme i {
+  #home .container nav .nav-container .menu-container .theme i {
     font-size: 0.6rem;
   }
-  .header-content .social-icons .cover i {
+  #home .container .row .social-icons .cover i {
     font-size: 1.1rem;
     padding: 0.3rem;
   }
-  .header-content .social-icons::before,
-  .header-content .social-icons::after {
+  #home .container .row .social-icons::before,
+  #home .container .row .social-icons::after {
     height: 2rem;
   }
-  .header-content .hero-text .text-container {
+  #home .container .row .hero-text .text-container {
     min-width: 18rem;
   }
-  .header-content .hero-text .text-container .greeting {
+  #home .container .row .hero-text .text-container .greeting {
     font-size: 2.7rem;
   }
-  .header-content .hero-text .text-container .full-name {
+  #home .container .row .hero-text .text-container .full-name {
     font-size: 4.4rem;
     margin: 0;
   }
-  .header-content .hero-text .text-container .full-name .name::first-letter {
+  #home .container .row .hero-text .text-container .full-name .name::first-letter {
     font-size: 6rem;
   }
-  .header-content .hero-text .text-container .main-text {
+  #home .container .row .hero-text .text-container .main-text {
     font-size: 1.7rem;
   }
-  .header-content .hero-text .text-container .main-buttons {
+  #home .container .row .hero-text .text-container .main-buttons {
     gap: 1.4rem;
   }
-  .header-content .hero-text .text-container .main-buttons .btn {
+  #home .container .row .hero-text .text-container .main-buttons .btn {
     font-size: 1rem;
     width: 9rem;
   }
-  .header-content .hero-photo img {
-    max-width: 18rem;
-  }
 }
 @media only screen and (min-device-width: 1025px) and (max-device-width: 1200px) {
+  .photo {
+    max-width: 22rem;
+  }
   .btn {
     padding: 0.6rem 2.4rem;
   }
-  nav .nav-container .logo {
+  #home .container nav .nav-container .logo {
     font-size: 3rem;
   }
-  nav .nav-container .menu-container .menu li a {
+  #home .container nav .nav-container .menu-container .menu li a {
     font-size: 1.2rem;
   }
-  nav .nav-container .menu-container .menu li:nth-child(2n) {
+  #home .container nav .nav-container .menu-container .menu li:nth-child(2n) {
     margin: 0 2rem;
   }
-  nav .nav-container .menu-container .theme {
+  #home .container nav .nav-container .menu-container .theme {
     margin-left: 4rem;
     width: 1.5rem;
     height: 1.5rem;
   }
-  nav .nav-container .menu-container .theme i {
+  #home .container nav .nav-container .menu-container .theme i {
     font-size: 0.8rem;
   }
-  .header-content .social-icons .cover i {
+  #home .container .row .social-icons .cover i {
     font-size: 1.3rem;
     padding: 0.4rem;
   }
-  .header-content .social-icons::before,
-  .header-content .social-icons::after {
+  #home .container .row .social-icons::before,
+  #home .container .row .social-icons::after {
     height: 2.5rem;
   }
-  .header-content .hero-text .text-container {
+  #home .container .row .hero-text .text-container {
     min-width: 26rem;
   }
-  .header-content .hero-text .text-container .greeting {
+  #home .container .row .hero-text .text-container .greeting {
     font-size: 3rem;
   }
-  .header-content .hero-text .text-container .full-name {
+  #home .container .row .hero-text .text-container .full-name {
     font-size: 6.2rem;
     margin-top: -1rem;
     margin-bottom: -0.5rem;
   }
-  .header-content .hero-text .text-container .full-name .name::first-letter {
+  #home .container .row .hero-text .text-container .full-name .name::first-letter {
     font-size: 8rem;
   }
-  .header-content .hero-text .text-container .main-text {
+  #home .container .row .hero-text .text-container .main-text {
     font-size: 2.4rem;
   }
-  .header-content .hero-text .text-container .main-buttons .btn {
+  #home .container .row .hero-text .text-container .main-buttons .btn {
     font-size: 1.1rem;
     width: 12rem;
   }
-  .header-content .hero-photo img {
-    max-width: 22rem;
-  }
 }
 @media (min-width: 1700px) {
-  nav .nav-container .logo {
+  #home .container nav .nav-container .logo {
     font-size: 5rem;
   }
-  nav .nav-container .menu-container .menu li a {
+  #home .container nav .nav-container .menu-container .menu li a {
     font-size: 2rem;
   }
-  .header-content {
-    justify-content: center;
-  }
-  .header-content .hero-text {
+  #home .container .row .hero-text {
     max-width: 54rem;
   }
-  .header-content .hero-text .greeting {
+  #home .container .row .hero-text .greeting {
     font-size: 4.7rem;
   }
-  .header-content .hero-text .full-name {
+  #home .container .row .hero-text .full-name {
     font-size: 10rem;
   }
-  .header-content .hero-text .full-name .name::first-letter {
+  #home .container .row .hero-text .full-name .name::first-letter {
     font-size: 13rem;
   }
-  .header-content .hero-text .main-text {
+  #home .container .row .hero-text .main-text {
     font-size: 3.8rem;
   }
-  .header-content .hero-text .main-btn .btn-text,
-  .header-content .hero-text .main-btn .btn-icon {
+  #home .container .row .hero-text .main-btn .btn-text,
+  #home .container .row .hero-text .main-btn .btn-icon {
     font-size: 1.8rem;
   }
-  .header-content .hero-text .main-btn .btn-icon {
+  #home .container .row .hero-text .main-btn .btn-icon {
     padding: 1.2rem;
   }
-  .header-content .hero-photo img {
+  #home .container .row .hero-photo img {
     max-width: 40rem;
   }
 }/*# sourceMappingURL=style.css.map */
