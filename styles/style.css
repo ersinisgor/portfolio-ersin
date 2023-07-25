@@ -59,10 +59,6 @@ html {
   scroll-behavior: smooth;
 }
 
-section {
-  padding: 8rem 5%;
-}
-
 h1,
 h2,
 h3,
@@ -111,6 +107,17 @@ img {
 
 .container {
   padding: 6rem 5%;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title-container .title {
+  font-size: 3.75rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
 }
 
 /*--Navbar--*/
@@ -202,12 +209,12 @@ nav .nav-container .controls .active-btn {
   transition: all 0.4s ease-in-out;
 }
 nav .nav-container .controls .active-btn i {
-  color: var(--color-font) !important;
+  color: var(--color-background) !important;
 }
 nav .nav-container .controls .control {
   padding: 1rem;
   cursor: pointer;
-  background-color: var(--color-secondary-font);
+  background-color: var(--box-shadow-2);
   width: 3.3rem;
   height: 3.3rem;
   border-radius: 50%;
@@ -219,7 +226,6 @@ nav .nav-container .controls .control {
 }
 nav .nav-container .controls .control i {
   font-size: 1.2rem;
-  color: var(--color-background);
   pointer-events: none;
 }
 
@@ -356,17 +362,6 @@ nav .nav-container .controls .control i {
 }
 
 /* ----------ABOUT--------- */
-.title-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.title-container .title {
-  font-size: 60px;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
 #about .row {
   display: flex;
   justify-content: space-between;
@@ -379,7 +374,6 @@ nav .nav-container .controls .control i {
 }
 #about .row .about-col-2 .about-content {
   font-family: "Nunito", sans-serif;
-  font-size: 1.6rem;
   text-align: justify;
   color: var(--color-secondary-font);
 }
@@ -438,9 +432,8 @@ nav .nav-container .controls .control i {
 .projects .project-row {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   max-width: 100%;
-  margin: 50px 0;
+  margin: 3rem 0;
 }
 .projects .project-row .project-col-1 {
   text-align: left;
@@ -456,7 +449,6 @@ nav .nav-container .controls .control i {
 }
 .projects .project-row .project-col-1 .project-content .project-explain {
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
 }
 .projects .project-row .project-col-1 .project-content .technology {
   color: var(--color-secondary-font);
@@ -464,6 +456,7 @@ nav .nav-container .controls .control i {
 .projects .project-row .project-col-1 .project-buttons {
   display: flex;
   justify-content: flex-start;
+  gap: 2rem;
 }
 .projects .project-row .project-col-2 {
   flex-basis: 59%;
@@ -484,10 +477,10 @@ nav .nav-container .controls .control i {
   background-color: var(--color-button);
   color: var(--color-background);
   border-radius: 4px;
-  margin-right: 2rem;
   padding: 0.5rem 1rem;
-  width: 160px;
+  width: 10rem;
   font-size: 1rem;
+  white-space: nowrap;
 }
 .projects .project-btn i {
   margin-right: 1rem;
@@ -505,8 +498,17 @@ nav .nav-container .controls .control i {
 
 /*---------------RESPONSIVE DESIGNS-----------------*/
 @media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
   .photo {
     max-width: 20rem;
+  }
+  .btn {
+    width: 10rem;
+  }
+  .title-container .title {
+    font-size: 2.4rem;
   }
   #home .container nav .nav-container .logo {
     font-size: 2rem;
@@ -542,8 +544,22 @@ nav .nav-container .controls .control i {
   #home .container .row .hero-text .text-container .main-buttons .btn {
     font-size: 1rem;
   }
+  #home .container .row .hero-text .text-container .main-buttons .btn.btn-2 {
+    margin-top: 1rem;
+  }
+  #portfolio .container .projects .project-btn {
+    font-size: 0.9rem;
+  }
+  #portfolio .container .projects .project-row .project-col-1 .project-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 @media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 5%;
+  }
   .row {
     flex-direction: column-reverse;
     align-items: center;
@@ -551,9 +567,6 @@ nav .nav-container .controls .control i {
   }
   .photo {
     max-width: unset;
-  }
-  section {
-    padding: 3rem 5%;
   }
   #home .container {
     padding-top: 0;
@@ -578,7 +591,6 @@ nav .nav-container .controls .control i {
     flex-direction: row;
     align-self: unset;
     align-items: center;
-    margin-top: 2rem;
   }
   #home .container .row .hero-text {
     flex-direction: column;
@@ -596,9 +608,30 @@ nav .nav-container .controls .control i {
   #home .container .row .hero-text .text-container .full-name {
     margin: 0;
   }
-  #about .about-container .row {
-    flex-direction: column;
+  #about .container .row .about-col-2 .about-content {
+    text-align: center;
+  }
+  #portfolio .container .projects .project-row {
+    flex-direction: column-reverse;
     align-items: center;
+    gap: 2rem;
+    margin: 0;
+    margin-bottom: 4rem;
+    border-radius: 20px;
+    border: 1px solid var(--color-button);
+    padding: 1rem;
+  }
+  #portfolio .container .projects .project-row .project-col-1 {
+    text-align: center;
+  }
+  #portfolio .container .projects .project-row .project-col-1 .project-title {
+    font-size: 1.6rem;
+  }
+  #portfolio .container .projects .project-row .project-col-1 .project-buttons {
+    justify-content: center;
+  }
+  #portfolio .container .projects .project-row .project-col-1 .project-buttons .project-btn {
+    margin: 0;
   }
 }
 @media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
@@ -687,6 +720,14 @@ nav .nav-container .controls .control i {
   #home .container .row .hero-text .text-container .main-buttons .btn {
     font-size: 1rem;
     width: 9rem;
+  }
+  #portfolio .container .projects .project-row .project-col-1 .project-buttons {
+    flex-wrap: wrap;
+  }
+  #portfolio .container .projects .project-row .project-col-1 .project-buttons .project-btn {
+    margin: 0;
+    width: 8rem;
+    font-size: 1rem;
   }
 }
 @media only screen and (min-device-width: 1025px) and (max-device-width: 1200px) {

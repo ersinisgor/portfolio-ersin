@@ -23,11 +23,13 @@ themeBtn.addEventListener('click', () => {
 
   const h1 = document.querySelectorAll('h1');
   // const fullName = document.querySelector('.full-name');
-  const headerContent = document.querySelector('.header-content');
+  const rows = document.querySelectorAll('.row');
   h1.forEach(light => light.classList.toggle('light'));
   // h1.classList.toggle('light');
   // fullName.classList.toggle('light');
-  headerContent.classList.toggle('light');
+  rows.forEach(row => {
+    row.classList.toggle('light');
+  });
 
   if (lightTheme) {
     themeBtn.innerHTML = `<i class='bx bx-moon'></i>`;

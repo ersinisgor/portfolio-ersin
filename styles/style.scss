@@ -294,7 +294,7 @@ html {
 }
 
 section {
-  padding: 8rem 5%;
+  // padding: 8rem 5%;
 }
 
 h1,
@@ -361,6 +361,19 @@ img {
 
 .container {
   padding: 6rem 5%;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .title {
+    // color: var(--color-font);
+    font-size: 3.75rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    // text-align: center;
+  }
 }
 
 /*--Navbar--*/
@@ -477,13 +490,15 @@ nav {
         background-color: var(--color-button) !important;
         transition: all 0.4s ease-in-out;
         i {
-          color: var(--color-font) !important;
+          // color: var(--color-font) !important;
+          color: var(--color-background) !important;
         }
       }
       .control {
         padding: 1rem;
         cursor: pointer;
-        background-color: var(--color-secondary-font);
+        // background-color: var(--color-secondary-font);
+        background-color: var(--box-shadow-2);
         // background-color: rgba(92, 103, 125, 0.6);
         width: 3.3rem;
         height: 3.3rem;
@@ -495,7 +510,8 @@ nav {
         box-shadow: var(--box-shadow-1);
         i {
           font-size: 1.2rem;
-          color: var(--color-background);
+          // color: var(--color-background);
+          // color: var(--color-secondary-font);
           pointer-events: none;
         }
       }
@@ -713,18 +729,6 @@ nav {
 }
 
 /* ----------ABOUT--------- */
-.title-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .title {
-    // color: var(--color-font);
-    font-size: 60px;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    // text-align: center;
-  }
-}
 
 #about {
   // color: var(--color-background);
@@ -742,7 +746,7 @@ nav {
 
       .about-content {
         font-family: 'Nunito', sans-serif;
-        font-size: 1.6rem;
+        // font-size: 1.6rem;
         text-align: justify;
         color: var(--color-secondary-font);
       }
@@ -806,9 +810,9 @@ nav {
   .project-row {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     max-width: 100%;
-    margin: 50px 0;
+    margin: 3rem 0;
     .project-col-1 {
       text-align: left;
       flex-basis: 39%;
@@ -821,7 +825,7 @@ nav {
         margin-bottom: 1.2rem;
         .project-explain {
           margin-bottom: 0.5rem;
-          font-size: 1.1rem;
+          // font-size: 1.1rem;
         }
         .technology {
           color: var(--color-secondary-font);
@@ -830,6 +834,7 @@ nav {
       .project-buttons {
         display: flex;
         justify-content: flex-start;
+        gap: 2rem;
       }
     }
     .project-col-2 {
@@ -855,12 +860,13 @@ nav {
     background-color: var(--color-button);
     color: var(--color-background);
     border-radius: 4px;
-    margin-right: 2rem;
+    // margin-right: 2rem;
     padding: 0.5rem 1rem;
     // width: 6rem;
-    width: 160px;
+    width: 10rem;
     // height: 2.8rem;
     font-size: 1rem;
+    white-space: nowrap;
     i {
       margin-right: 1rem;
     }
@@ -953,8 +959,19 @@ nav {
 /*---------------RESPONSIVE DESIGNS-----------------*/
 // Mobile
 @media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
   .photo {
     max-width: 20rem;
+  }
+  .btn {
+    width: 10rem;
+  }
+  .title-container {
+    .title {
+      font-size: 2.4rem;
+    }
   }
   #home {
     .container {
@@ -1005,7 +1022,11 @@ nav {
               align-items: center;
               .btn {
                 font-size: 1rem;
+
                 // width: 100%;
+              }
+              .btn.btn-2 {
+                margin-top: 1rem;
               }
             }
             // .main-btn {
@@ -1025,10 +1046,32 @@ nav {
       }
     }
   }
+  #portfolio {
+    .container {
+      .projects {
+        .project-btn {
+          // width: 9rem;
+          font-size: 0.9rem;
+        }
+        .project-row {
+          .project-col-1 {
+            .project-buttons {
+              flex-direction: column;
+              align-items: center;
+              gap: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // Mobile and Small Tablets
 @media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 5%;
+  }
   .row {
     flex-direction: column-reverse;
     align-items: center;
@@ -1038,9 +1081,7 @@ nav {
   .photo {
     max-width: unset;
   }
-  section {
-    padding: 3rem 5%;
-  }
+
   #home {
     .container {
       padding-top: 0;
@@ -1067,7 +1108,7 @@ nav {
           flex-direction: row;
           align-self: unset;
           align-items: center;
-          margin-top: 2rem;
+          // margin-top: 2rem;
           // position: relative;
         }
 
@@ -1091,10 +1132,43 @@ nav {
     }
   }
   #about {
-    .about-container {
+    .container {
       .row {
-        flex-direction: column;
-        align-items: center;
+        .about-col-2 {
+          .about-content {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  #portfolio {
+    .container {
+      .projects {
+        .project-row {
+          flex-direction: column-reverse;
+          align-items: center;
+          gap: 2rem;
+          margin: 0;
+          margin-bottom: 4rem;
+          border-radius: 20px;
+          border: 1px solid var(--color-button);
+          padding: 1rem;
+          // padding-bottom: 0;
+          .project-col-1 {
+            text-align: center;
+            .project-title {
+              font-size: 1.6rem;
+            }
+            .project-buttons {
+              justify-content: center;
+              // gap: 2rem;
+              .project-btn {
+                margin: 0;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -1107,6 +1181,7 @@ nav {
   .btn {
     width: 12rem;
   }
+
   #home {
     .container {
       .row {
@@ -1239,6 +1314,30 @@ nav {
                 // padding: 0.4rem 1.6rem;
                 font-size: 1rem;
                 width: 9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #portfolio {
+    .container {
+      .projects {
+        .project-row {
+          // flex-direction: column;
+          // align-items: center;
+          // gap: 4rem;
+          .project-col-1 {
+            // text-align: center;
+            .project-buttons {
+              // justify-content: center;
+              // gap: 2rem;
+              flex-wrap: wrap;
+              .project-btn {
+                margin: 0;
+                width: 8rem;
+                font-size: 1rem;
               }
             }
           }
