@@ -1,16 +1,15 @@
 /* Light Theme */
 :root {
   --color-background: #404041;
+  --color-background-controls: rgba(92, 103, 125, 0.9);
   --color-font: #d1e8e2;
   --color-button: #ffcb9a;
-  --color-button-tone: rgba(255, 203, 154, 0.3);
   --color-secondary: #a74c22;
-  --color-secondary-tone: rgba(167, 76, 34, 0.3);
   --color-secondary-font: #7a9e7e;
   --color-gradient-1: #e6c17a;
   --color-gradient-2: #d3cae2;
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.2);
-  --box-shadow-2: rgba(92, 103, 125, 0.6);
+  --box-shadow-2: #5c677d99;
   --color-box-shadow-3: #2c3531;
 }
 
@@ -93,6 +92,10 @@ a {
 
 img {
   width: 100%;
+}
+
+u {
+  color: var(--box-shadow-2);
 }
 
 .photo {
@@ -196,25 +199,29 @@ nav .nav-container .controls {
   position: fixed;
   bottom: 3%;
   left: 50%;
-  z-index: 10;
+  z-index: 2;
   transform: translateX(-50%);
   align-items: center;
   justify-content: center;
-  padding: 0.3rem 0.8rem;
+  background-color: var(--color-background-controls);
+  padding: 1rem 2rem;
   border-radius: 3.9rem;
   display: none;
 }
 nav .nav-container .controls .active-btn {
   background-color: var(--color-button) !important;
   transition: all 0.4s ease-in-out;
+  width: 4rem !important;
+  height: 4rem !important;
 }
 nav .nav-container .controls .active-btn i {
+  font-size: 1.4rem !important;
   color: var(--color-background) !important;
 }
 nav .nav-container .controls .control {
   padding: 1rem;
   cursor: pointer;
-  background-color: var(--box-shadow-2);
+  background-color: var(--color-background);
   width: 3.3rem;
   height: 3.3rem;
   border-radius: 50%;
@@ -240,7 +247,7 @@ nav .nav-container .controls .control i {
   background-color: var(--color-button);
   color: var(--color-background);
   letter-spacing: 3px;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: background-color 0.5s;
   text-transform: uppercase;
   transition: all 0.4s ease-in-out;
@@ -271,6 +278,7 @@ nav .nav-container .controls .control i {
   font-size: 1.4rem;
   padding: 0.5rem;
   margin: 0.2rem 0;
+  transition: all 0.4s;
 }
 .row .social-icons .cover i:hover {
   transform: scale(1.15);
@@ -437,12 +445,12 @@ nav .nav-container .controls .control i {
 }
 .projects .project-row .project-col-1 {
   text-align: left;
-  flex-basis: 39%;
+  flex-basis: 50%;
 }
 .projects .project-row .project-col-1 .project-title {
   font-weight: 700;
   margin-bottom: 1.2rem;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
 .projects .project-row .project-col-1 .project-content {
   margin-bottom: 1.2rem;
@@ -459,11 +467,12 @@ nav .nav-container .controls .control i {
   gap: 2rem;
 }
 .projects .project-row .project-col-2 {
-  flex-basis: 59%;
+  flex-basis: 48%;
   transition: all 1s ease-in-out;
   overflow: hidden;
   border-radius: 20px;
   display: flex;
+  box-shadow: var(--box-shadow-1);
 }
 .projects .project-row .project-col-2:hover img {
   transform: scale(1.1);
@@ -476,7 +485,7 @@ nav .nav-container .controls .control i {
   border: 1px solid var(--color-button);
   background-color: var(--color-button);
   color: var(--color-background);
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 0.5rem 1rem;
   width: 10rem;
   font-size: 1rem;
@@ -496,6 +505,113 @@ nav .nav-container .controls .control i {
   font-size: 1.15rem;
 }
 
+/*-------------Contact---------------*/
+.row .contact-left {
+  color: var(--color-secondary-font);
+  flex-basis: 35%;
+}
+.row .contact-left p {
+  margin-top: 2rem;
+}
+.row .contact-left .social-icons {
+  flex-direction: row;
+  margin-top: 2rem;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+.row .contact-left .social-icons i {
+  font-size: 1.6rem;
+}
+.row .contact-left .social-icons i:hover {
+  transform: translateY(-5px);
+}
+.row .contact-left .social-icons .cover:first-child i {
+  margin-left: -2px;
+  padding-left: 0;
+}
+.row .contact-left .social-icons::before,
+.row .contact-left .social-icons::after {
+  display: none;
+}
+.row .contact-left .btn {
+  font-size: 1rem;
+  width: auto;
+  padding: 0.6rem 0.8rem;
+  letter-spacing: unset;
+}
+.row .contact-right {
+  flex-basis: 60%;
+}
+.row .contact-right form {
+  width: 100%;
+}
+.row .contact-right form input,
+.row .contact-right form textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background-color: var(--color-box-shadow-3);
+  padding: 1rem;
+  margin: 1rem 0;
+  color: var(--color-font);
+  border-radius: 6px;
+}
+.row .contact-right form .btn {
+  width: unset;
+  padding: 1rem 2rem;
+  margin: 0;
+  cursor: pointer;
+}
+.row .contact-right #message {
+  color: var(--color-secondary-font);
+  margin-top: 0.5rem;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.row.light .contact-right form input,
+.row.light .contact-right form textarea {
+  background-color: #bdddd6;
+}
+
+/*-----------Footer--------------*/
+footer {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  color: var(--color-background-controls);
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-top: auto;
+  height: 30px;
+  padding-bottom: 0.5rem;
+}
+footer a .fa-github {
+  color: var(--color-background-controls);
+  font-size: 1.35rem;
+}
+footer a .fa-github:hover {
+  animation: github-animation 0.5s ease infinite alternate;
+}
+
+footer.light {
+  color: var(--box-shadow-2);
+}
+footer.light a .fa-github {
+  color: var(--box-shadow-2);
+}
+
+@keyframes github-animation {
+  from {
+    transform: translateY(0rem) scale(1.2);
+  }
+  to {
+    transform: translateY(-0.3rem) scale(1.2);
+  }
+}
 /*---------------RESPONSIVE DESIGNS-----------------*/
 @media (max-width: 480px) {
   body {
@@ -670,6 +786,9 @@ nav .nav-container .controls .control i {
   }
 }
 @media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
+  body {
+    font-size: 1rem;
+  }
   .photo {
     max-width: 18rem;
   }
@@ -721,6 +840,9 @@ nav .nav-container .controls .control i {
     font-size: 1rem;
     width: 9rem;
   }
+  #portfolio .container .projects .project-row .project-col-1 .project-title {
+    font-size: 1.6rem;
+  }
   #portfolio .container .projects .project-row .project-col-1 .project-buttons {
     flex-wrap: wrap;
   }
@@ -728,6 +850,10 @@ nav .nav-container .controls .control i {
     margin: 0;
     width: 8rem;
     font-size: 1rem;
+  }
+  #portfolio .container .projects .project-row .project-col-2 {
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }
 @media only screen and (min-device-width: 1025px) and (max-device-width: 1200px) {
