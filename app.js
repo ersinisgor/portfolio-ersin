@@ -17,31 +17,26 @@ const themeBtn = document.querySelector('.theme');
 themeBtn.addEventListener('click', () => {
   let element = document.body;
   const lightTheme = element.classList.toggle('light');
-  // const themeButton = document.querySelector('.theme');
-  // const themeButton = document.querySelector('.theme');
-  // const headerPhoto = document.querySelector('.right-header');
-
   const h1 = document.querySelectorAll('h1');
-  // const fullName = document.querySelector('.full-name');
   const rows = document.querySelectorAll('.row');
-
+  const githubImage = document.querySelector('.github-image');
   const footer = document.querySelector('footer');
+
+  if (lightTheme) {
+    themeBtn.innerHTML = `<i class='bx bx-moon'></i>`;
+    githubImage.innerHTML = `<img src="/images/github-dark.png" alt="GitHub"></img>`;
+  } else {
+    themeBtn.innerHTML = `<i class='bx bx-sun'></i>`;
+    githubImage.innerHTML = `<img src="/images/github.png" alt="GitHub"></img>`;
+  }
+
   h1.forEach(light => light.classList.toggle('light'));
+
   rows.forEach(row => {
     row.classList.toggle('light');
   });
 
   footer.classList.toggle('light');
-  // h1.classList.toggle('light');
-  // fullName.classList.toggle('light');
-
-  if (lightTheme) {
-    themeBtn.innerHTML = `<i class='bx bx-moon'></i>`;
-    // headerPhoto.innerHTML = `<img src="images/white-profile-photo.png" alt="Profile Photo">`;
-  } else {
-    themeBtn.innerHTML = `<i class='bx bx-sun'></i>`;
-    // headerPhoto.innerHTML = `<img src="images/black-profile-photo.png" alt="Profile Photo">`;
-  }
 });
 
 /*----------Submit Form------------*/
@@ -60,12 +55,12 @@ submitBtn.onclick = () => {
   if (inputName.value && inputMail.value && textArea.value) {
     submitBtn.innerText = 'Thanks';
     setTimeout(() => {
-      submitBtn.innerText = 'Submit';
+      submitBtn.innerText = 'Send Message';
     }, 3000);
   }
 };
 
-//submit form
+//Post request and reset form
 form.addEventListener('submit', e => {
   e.preventDefault();
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
@@ -79,6 +74,40 @@ form.addEventListener('submit', e => {
     })
     .catch(error => console.error('Error!', error.message));
 });
+
+//media query
+// const mediaQuery = window.matchMedia(
+//   '(min-device-width: 769px) and (max-device-width: 1024px)'
+// );
+
+// if (mediaQuery) {
+//   console.log('sss');
+//   alert('media query');
+// }
+
+// const contactCol_2 = document.querySelector('.contact-col-2');
+// if (window.innerWidth < 769) {
+//   contactCol_2.innerHTML = `<form name="submit-to-google-sheet">
+//   <input type="text" name="Name" placeholder="Name" required>
+//   <input type="email" name="Email" placeholder="Email" required>
+//   <textarea name="Message" rows="6" placeholder="Message"></textarea>
+//   <span id="message"></span>
+//   <button type="submit" class="btn submit">Send Message</button>
+// </form>`;
+// } else {
+//   contactCol_2.innerHTML = `<form name="submit-to-google-sheet">
+//   <input type="text" name="Name" placeholder="Name" required>
+//   <input type="email" name="Email" placeholder="Email" required>
+//   <textarea name="Message" rows="6" placeholder="Message"></textarea>
+//   <button type="submit" class="btn submit">Send Message</button>
+// </form>
+// <span id="message"></span>`;
+// }
+
+// if (window.width > 768 && window.width < 1025) {
+//   console.log('sss');
+// }
+
 // console.log(buttons);
 // const sections = document.querySelectorAll('.section');
 // const sectBtns = document.querySelectorAll('.controls');
