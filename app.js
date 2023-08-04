@@ -108,6 +108,15 @@ form.addEventListener('submit', e => {
 //   console.log('sss');
 // }
 
+if (window.innerWidth > 768 && window.innerWidth < 1025) {
+  alert(
+    'Bu ekran ölçüsü aralığında project-buttons proje resminin altında olacak, project-buttons ve project-col-2 elementleri `project-col-2-container` divi içine alınacak '
+  );
+  console.log(
+    'Bu ekran ölçüsü aralığında project-buttons proje resminin altında olacak, project-buttons ve project-col-2 elementleri `project-col-2-container` divi içine alınacak '
+  );
+}
+
 // console.log(buttons);
 // const sections = document.querySelectorAll('.section');
 // const sectBtns = document.querySelectorAll('.controls');

@@ -396,15 +396,52 @@ nav .nav-container .controls .control i {
   flex-basis: 35%;
 }
 #about .row .about-col-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex-basis: 60%;
 }
-#about .row .about-col-2 .about {
+#about .row .about-col-2 .text-row .title-container .about {
   margin-top: -1rem;
 }
-#about .row .about-col-2 .about-content {
+#about .row .about-col-2 .text-row .about-content {
   font-family: "Nunito", sans-serif;
   text-align: justify;
   color: var(--color-secondary-font);
+}
+#about .row .about-col-2 .about-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+#about .row .about-col-2 .about-buttons a {
+  height: 8rem;
+  width: 18rem;
+  background-color: var(--color-background);
+  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+  color: #222;
+  color: var(--box-shadow-2);
+  font-size: 1.8rem;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#about .row .about-col-2 .about-buttons .about-btn:hover {
+  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+  font-size: 1.7rem;
+  transition: 500ms;
+  color: var(--color-button);
+  text-shadow: 0px 0px 20px var(--color-button);
+}
+#about .row.light .about-col-2 .about-buttons a {
+  box-shadow: -5px -5px 15px #f1f8f7, 5px 5px 15px #91c4bd, inset 5px 5px 10px #f1f8f7, inset -5px -5px 10px #91c4bd;
+}
+#about .row.light .about-col-2 .about-buttons .about-btn:hover {
+  box-shadow: -5px -5px 15px #f1f8f7, 5px 5px 15px #91c4bd, inset 5px 5px 10px #91c4bd, inset -5px -5px 10px #f1f8f7;
+  text-shadow: 0px 0px 0px var(--color-button);
+  font-weight: 600;
 }
 #about .skills {
   margin-top: 6rem;
@@ -773,10 +810,10 @@ footer.light a .fa-github {
   #home .container .row .hero-text .text-container .full-name {
     margin: 0;
   }
-  #about .container .row .about-col-2 .title-container .title {
+  #about .container .row .about-col-2 .text-row .title-container .about {
     margin-top: 0;
   }
-  #about .container .row .about-col-2 .about-content {
+  #about .container .row .about-col-2 .text-row .about-content {
     text-align: center;
   }
   #portfolio .container .projects .project-row {
@@ -875,8 +912,17 @@ footer.light a .fa-github {
   body {
     font-size: 1rem;
   }
+  .container {
+    padding: 4rem 5%;
+  }
+  .title-container .title {
+    margin-bottom: 3rem;
+  }
   .photo {
     max-width: 18rem;
+  }
+  #home .container nav .nav-container {
+    padding-bottom: 0.5rem;
   }
   #home .container nav .nav-container .logo {
     font-size: 2.6rem;
@@ -926,6 +972,18 @@ footer.light a .fa-github {
     font-size: 1rem;
     width: 9rem;
   }
+  #about .container .row .about-col-1 {
+    flex-basis: 45%;
+  }
+  #about .container .row .about-col-2 {
+    flex-basis: 55%;
+  }
+  #about .container .row .about-col-2 .text-row .title-container .about {
+    margin-bottom: 1rem;
+  }
+  #portfolio .container .projects .project-row {
+    margin: 2rem 0;
+  }
   #portfolio .container .projects .project-row .project-col-1 .project-description .project-title {
     font-size: 1.6rem;
   }
@@ -940,6 +998,12 @@ footer.light a .fa-github {
   #portfolio .container .projects .project-row .project-col-2 {
     height: -moz-fit-content;
     height: fit-content;
+  }
+  #portfolio .container .projects .project-row:first-child {
+    margin-top: 0;
+  }
+  #portfolio .container .projects .project-row:last-child {
+    margin-bottom: 0;
   }
 }
 @media only screen and (min-device-width: 1025px) and (max-device-width: 1200px) {
@@ -994,6 +1058,9 @@ footer.light a .fa-github {
   #home .container .row .hero-text .text-container .main-buttons .btn {
     font-size: 1.1rem;
     width: 12rem;
+  }
+  #about .container .row .about-col-2 .text-row .title-container .about {
+    margin-bottom: 1rem;
   }
 }
 @media (min-width: 1700px) {
