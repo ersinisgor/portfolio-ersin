@@ -1,3 +1,13 @@
+//Add listener to Education button
+const educationButton = document.querySelector('.education-btn');
+const educationContainer = document.querySelector('.education-container');
+
+educationButton.addEventListener('click', () => {
+  educationContainer.classList.toggle('active');
+  educationButton.classList.toggle('active');
+});
+
+//Add listener to Control Buttons
 const buttons = document.querySelectorAll('.control');
 buttons.forEach(button => {
   button.addEventListener('click', function () {
@@ -19,6 +29,8 @@ themeBtn.addEventListener('click', () => {
   const lightTheme = element.classList.toggle('light');
   const h1 = document.querySelectorAll('h1');
   const rows = document.querySelectorAll('.row');
+  const education = document.querySelector('.education');
+
   const githubImage = document.querySelector('.github-image');
   const footer = document.querySelector('footer');
 
@@ -35,6 +47,8 @@ themeBtn.addEventListener('click', () => {
   rows.forEach(row => {
     row.classList.toggle('light');
   });
+
+  education.classList.toggle('light');
 
   footer.classList.toggle('light');
 });

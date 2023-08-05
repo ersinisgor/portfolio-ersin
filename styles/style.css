@@ -428,20 +428,55 @@ nav .nav-container .controls .control i {
   justify-content: center;
   text-align: center;
 }
+#about .row .about-col-2 .about-buttons a span {
+  font-size: 3.6rem;
+  margin-right: 0.5rem;
+}
+#about .row .about-col-2 .about-buttons .education-btn.active {
+  color: var(--color-button);
+}
 #about .row .about-col-2 .about-buttons .about-btn:hover {
   box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
   font-size: 1.7rem;
-  transition: 500ms;
+  transition: all 0.5s ease-in-out;
   color: var(--color-button);
   text-shadow: 0px 0px 20px var(--color-button);
 }
 #about .row.light .about-col-2 .about-buttons a {
-  box-shadow: -5px -5px 15px #f1f8f7, 5px 5px 15px #91c4bd, inset 5px 5px 10px #f1f8f7, inset -5px -5px 10px #91c4bd;
+  box-shadow: -5px -5px 15px #ddeff0, 5px 5px 15px #91c4bd, inset 5px 5px 10px #ddeff0, inset -5px -5px 10px #91c4bd;
 }
 #about .row.light .about-col-2 .about-buttons .about-btn:hover {
-  box-shadow: -5px -5px 15px #f1f8f7, 5px 5px 15px #91c4bd, inset 5px 5px 10px #91c4bd, inset -5px -5px 10px #f1f8f7;
+  box-shadow: -5px -5px 15px #ddeff0, 5px 5px 15px #91c4bd, inset 5px 5px 10px #91c4bd, inset -5px -5px 10px #ddeff0;
   text-shadow: 0px 0px 0px var(--color-button);
   font-weight: 600;
+}
+#about .education-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: appearFormat 2s ease-in-out forwards;
+}
+#about .education-container .education .education-content {
+  margin-bottom: 2rem;
+}
+#about .education-container .education .education-content .education-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-secondary-font);
+}
+#about .education-container .education .education-content .education-place {
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+#about .education-container .education .education-content .education-degree {
+  font-weight: 200;
+  color: #a3a3a3;
+}
+#about .education-container .education.light .education-content .education-degree {
+  color: #444;
+}
+#about .education-container.active {
+  display: flex;
 }
 #about .skills {
   margin-top: 6rem;
@@ -676,6 +711,41 @@ footer.light a .fa-github {
   }
   to {
     transform: translateY(-0.3rem) scale(1.2);
+  }
+}
+@keyframes appear {
+  from {
+    display: none;
+  }
+  to {
+    display: flex;
+  }
+}
+@keyframes appearForm {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes appearFormat {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 /*---------------RESPONSIVE DESIGNS-----------------*/
