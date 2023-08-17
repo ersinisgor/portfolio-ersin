@@ -841,8 +841,10 @@ nav {
           background-color: var(--color-background);
           box-shadow: -5px -5px 15px #444, 5px 5px 15px #222,
             inset 5px 5px 10px #444, inset -5px -5px 10px #222;
-          color: #222;
-          color: var(--box-shadow-2);
+          // color: #747070;
+          // color: #222;
+          // color: var(--box-shadow-2);
+          color: #6a6a6a;
           font-size: 1.8rem;
           border-radius: 20px;
           display: inline-flex;
@@ -895,6 +897,7 @@ nav {
         a {
           box-shadow: -5px -5px 15px #ddeff0, 5px 5px 15px #91c4bd,
             inset 5px 5px 10px #ddeff0, inset -5px -5px 10px #91c4bd;
+          color: var(--box-shadow-2);
         }
         .about-btn:hover {
           box-shadow: -5px -5px 15px #ddeff0, 5px 5px 15px #91c4bd,
@@ -916,10 +919,11 @@ nav {
     display: none;
     flex-direction: column;
     align-items: center;
+    animation: appearFormat 2s ease-in both;
     // transition: all 1s ease;
-
+    // visibility: hidden;
     // animation: appearForm 1s ease alternate-reverse;
-    animation: appearFormat 2s ease-in-out forwards;
+    // animation: appearFormat 2s ease-in-out forwards;
 
     .education {
       .education-content {
@@ -950,11 +954,12 @@ nav {
   }
   .education-container.active {
     // animation: fadeInOut 1s ease;
+    animation: fade-in 2s ease-in-out alternate;
     display: flex;
     // flex-direction: column;
     // align-items: center;
     // opacity: 1;
-    // visibility: visible;
+    visibility: visible;
     // height: auto;
     // transition: all 2s ease;
     // flex-direction: column;
@@ -1316,17 +1321,55 @@ footer.light {
   }
 }
 
-@keyframes appearFormat {
+@keyframes fade-in {
   from {
-    // opacity: 0;
-    transform: translateY(-100%);
-    // transform: scale(0);
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes appearFormat {
+  // 0% {
+  //   height: 0;
+  // }
+  // 50% {
+  //   height: 50%;
+  // }
+  // 100% {
+  //   height: 100%;
+  // }
+  from {
+    opacity: 0;
+    // transform: translateY(-100%);
+    transform: scale(0.5);
+    // transform: translateY();
+    z-index: -1;
+    // height: 0;
+    visibility: hidden;
     // height: 0;
   }
   to {
-    // opacity: 1;
-    transform: translateY(0);
-    // transform: scale(1);
+    opacity: 1;
+    z-index: 1;
+    // transform: translateY(0);
+    // transform: translateY();
+    visibility: visible;
+    transform: scale(1);
     // height: auto;
   }
 }

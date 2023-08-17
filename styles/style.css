@@ -419,8 +419,7 @@ nav .nav-container .controls .control i {
   width: 18rem;
   background-color: var(--color-background);
   box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
-  color: #222;
-  color: var(--box-shadow-2);
+  color: #6a6a6a;
   font-size: 1.8rem;
   border-radius: 20px;
   display: inline-flex;
@@ -444,6 +443,7 @@ nav .nav-container .controls .control i {
 }
 #about .row.light .about-col-2 .about-buttons a {
   box-shadow: -5px -5px 15px #ddeff0, 5px 5px 15px #91c4bd, inset 5px 5px 10px #ddeff0, inset -5px -5px 10px #91c4bd;
+  color: var(--box-shadow-2);
 }
 #about .row.light .about-col-2 .about-buttons .about-btn:hover {
   box-shadow: -5px -5px 15px #ddeff0, 5px 5px 15px #91c4bd, inset 5px 5px 10px #91c4bd, inset -5px -5px 10px #ddeff0;
@@ -454,7 +454,7 @@ nav .nav-container .controls .control i {
   display: none;
   flex-direction: column;
   align-items: center;
-  animation: appearFormat 2s ease-in-out forwards;
+  animation: appearFormat 2s ease-in both;
 }
 #about .education-container .education .education-content {
   margin-bottom: 2rem;
@@ -476,7 +476,9 @@ nav .nav-container .controls .control i {
   color: #444;
 }
 #about .education-container.active {
+  animation: fade-in 2s ease-in-out alternate;
   display: flex;
+  visibility: visible;
 }
 #about .skills {
   margin-top: 6rem;
@@ -729,12 +731,38 @@ footer.light a .fa-github {
     opacity: 1;
   }
 }
-@keyframes appearFormat {
+@keyframes fade-in {
   from {
-    transform: translateY(-100%);
+    opacity: 0;
+    transform: scale(0.5);
   }
   to {
-    transform: translateY(0);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes appearFormat {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+    z-index: -1;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+    transform: scale(1);
   }
 }
 @keyframes fadeInOut {
