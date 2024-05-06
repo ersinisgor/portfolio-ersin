@@ -283,7 +283,7 @@
 
 body {
   background-color: var(--color-background);
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 1.2rem;
   color: var(--color-font);
   padding-top: 10px;
@@ -307,7 +307,7 @@ h5,
 h6,
 .greeting,
 .main-text {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 h1 {
@@ -455,7 +455,7 @@ nav {
             transform: translateY(-2px);
           }
           a::after {
-            content: '';
+            content: "";
             width: 0;
             height: 3px;
             background-color: var(--color-button);
@@ -662,7 +662,7 @@ nav {
     }
   }
   .social-icons::before {
-    content: '';
+    content: "";
     width: 1px;
     height: 3rem;
     border: 1px solid var(--color-font);
@@ -671,7 +671,7 @@ nav {
     margin-bottom: 0.7rem;
   }
   .social-icons::after {
-    content: '';
+    content: "";
     width: 1px;
     height: 3rem;
     border: 1px solid var(--color-font);
@@ -710,7 +710,7 @@ nav {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         // color: var(--color-font);
-        font-family: 'Whisper', cursive;
+        font-family: "Whisper", cursive;
         font-size: 8.4rem;
         font-weight: 500;
         white-space: nowrap;
@@ -723,7 +723,7 @@ nav {
           margin-right: 4px;
         }
         .surname::first-letter {
-          font-family: 'Allura', cursive;
+          font-family: "Allura", cursive;
           margin-right: 2px;
         }
       }
@@ -825,7 +825,7 @@ nav {
         }
 
         .about-content {
-          font-family: 'Nunito', sans-serif;
+          font-family: "Nunito", sans-serif;
           // font-size: 1.6rem;
           text-align: justify;
           color: var(--color-secondary-font);
@@ -1198,7 +1198,7 @@ nav {
     flex-basis: 60%;
     form {
       width: 100%;
-      input[type='text'] {
+      input[type="text"] {
         margin-top: 0;
       }
       input,
@@ -1215,7 +1215,7 @@ nav {
       }
       input::placeholder,
       textarea::placeholder {
-        font-family: 'Nunito', sans-serif;
+        font-family: "Nunito", sans-serif;
       }
       input:focus,
       textarea:focus {
@@ -1257,7 +1257,7 @@ nav {
 
 /*-----------Footer--------------*/
 footer {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
